@@ -1,6 +1,7 @@
 # MemCon-POLYP
 
-This repository contains the source code of MemCon-POLYP and baselines from the paper,
+This repository contains the source code of MemCon-POLYP and baseline model name SFMNet.This paper utilizes a memory bank to store learned feature embeddings from the model, which is then used to tackle the imbalanced data and hard pixels using the memory-driven region contrast loss.
+![](images/sup_unsup_memcon.png)
 ## Datasets
 In this work, we conducted experiments using five Polyp datasets and two NeoPolyp datasets:
 Kvasir : Dataset contains 1000 images with varying resolutions ranging from 720 × 576 to 1920 × 1072 pixels. Kvasir data is collected using endoscopic equipment at Vestre Viken Health Trust in Norway, annotated and verified by medical doctors (experienced endoscopists).
@@ -39,8 +40,11 @@ Training with ReCo is expected to require 20GB of memory in a single GPU setting
 
 
 
-### Other Notices
-TODO
+### Visualization
+Comparision output image among models on Kvasir dataset.
+![](images/kvasir_memcon.png)
+Comparision output image among models on Clinic dataset.
+![](images/colon_clinic_memcon.png)
 ## Citation
 TODO
 

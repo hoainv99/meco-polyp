@@ -1,2 +1,3 @@
 mit_b3.pth
 /__pycache__/
+*/__pycache__/*
