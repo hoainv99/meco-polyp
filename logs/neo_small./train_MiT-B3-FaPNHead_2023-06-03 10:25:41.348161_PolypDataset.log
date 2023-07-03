@@ -1,0 +1,50 @@
+2023-06-03 10:25:41.352 | INFO     | __main__:main:57 - Load config from configs/neo_small.yaml
+2023-06-03 10:25:41.352 | INFO     | __main__:main:58 - {'dataset': {'data_path': '/root/neo_code_reco/bkai-igh-neopolyp', 'train_data_path': ['/root/neo_code_reco/bkai-igh-neopolyp'], 'test_data_path': ['/root/neo_code/bkai-igh-neopolyp/test/test'], 'val_data_path': ['/root/neo_code_reco/bkai-igh-neopolyp']}, 'model': {'num_classes': 3, 'save_dir': '/root/neo_code_reco/configs/checkpoint_mb', 'backbone': 'MiT-B3', 'head': 'FaPNHead', 'pretrained': 'mit_b3.pth'}, 'optimizer': {'name': 'adam', 'lr': 0.0001, 'clip': 0.5, 'scheduler': 'cosine_warmup', 'loss': 'multi_structure_loss'}, 'dev': 'cuda', 'train': {'start_from': 0, 'save_from': 99, 'num_epochs': 100, 'num_warmup_epoch': 8, 'is_val': False, 'size_rates': [0.75, 1, 1.25], 'dataloader': {'batchsize': 8, 'img_size': 384, 'shuffle': True, 'num_workers': 4, 'pin_memory': True, 'drop_last': True}, 'amp': False, 'ddp': False, 'augment': {'prob': 1, 'Flip_prob': 0.5, 'HueSaturationValue_prob': 0.5, 'RandomBrightnessContrast_prob': 0.5, 'crop_prob': 0.0, 'randomrotate90_prob': 0.5, 'ColorJitter_prob': 0.5}, 'augment_weak': {'prob': 1, 'Flip_prob': 0.5}}, 'val': {'dataloader': {'batchsize': 8, 'img_size': 384, 'shuffle': True, 'num_workers': 4, 'pin_memory': True, 'drop_last': False}}, 'test': {'dev': 'cuda', 'visualize': True, 'visualize_dir': '/root/neo_code_reco/neo_visualize', 'vis_x': 180, 'vis_overwrite': False, 'checkpoint_dir': '/root/neo_code_reco/configs/checkpoint_mb/MiT-B3-FaPNHead_100.pth', 'dataloader': {'batchsize': 1, 'img_size': 384, 'shuffle': True, 'num_workers': 4, 'pin_memory': True, 'drop_last': False}, 'augment': {'prob': 1, 'Flip_prob': 0, 'HueSaturationValue_prob': 0, 'RandomBrightnessContrast_prob': 0, 'crop_prob': 0, 'randomrotate90_prob': 0, 'elastictransform_prob': 0, 'gridistortion_prob': 0, 'opticaldistortion_prob': 0, 'verticalflip_prob': 0, 'horizontalflip_prob': 0, 'randomgamma_prob': 0, 'CoarseDropout_prob': 0, 'RGBShift_prob': 0, 'MotionBlur_prob': 0, 'MedianBlur_prob': 0, 'GaussianBlur_prob': 0, 'GaussNoise_prob': 0, 'ChannelShuffle_prob': 0}}}
+2023-06-03 10:25:41.352 | INFO     | __main__:main:59 - Getting datapath
+2023-06-03 10:25:41.360 | INFO     | __main__:main:74 - There are 1000 images to train
+2023-06-03 10:25:41.360 | INFO     | __main__:main:93 - Train model with no valid dataset
+2023-06-03 10:25:41.360 | INFO     | __main__:main:95 - Loading data
+2023-06-03 10:25:41.736 | INFO     | __main__:main:112 - 125 batches to train
+2023-06-03 10:25:41.737 | INFO     | __main__:main:125 - Loading model
+2023-06-03 10:25:41.737 | INFO     | __main__:main:146 - Loading checkpoint from mit_b3.pth ...
+2023-06-03 10:25:46.370 | INFO     | __main__:main:190 - Training with FP32 ...
+2023-06-03 10:31:01.044 | INFO     | trainer:train_loop:183 - Epoch: [1/ 100] | Train loss: [2.001468879699707]
+2023-06-03 10:36:15.509 | INFO     | trainer:train_loop:183 - Epoch: [2/ 100] | Train loss: [0.8174727845191956]
+2023-06-03 10:41:30.747 | INFO     | trainer:train_loop:183 - Epoch: [3/ 100] | Train loss: [0.6923561320304871]
+2023-06-03 10:46:44.531 | INFO     | trainer:train_loop:183 - Epoch: [4/ 100] | Train loss: [0.6203634576797485]
+2023-06-03 10:51:59.357 | INFO     | trainer:train_loop:183 - Epoch: [5/ 100] | Train loss: [0.5661047978401184]
+2023-06-03 10:57:15.797 | INFO     | trainer:train_loop:183 - Epoch: [6/ 100] | Train loss: [0.4290694389343262]
+2023-06-03 11:02:31.756 | INFO     | trainer:train_loop:183 - Epoch: [7/ 100] | Train loss: [0.3464033492803574]
+2023-06-03 11:07:46.778 | INFO     | trainer:train_loop:183 - Epoch: [8/ 100] | Train loss: [0.30813589358329774]
+2023-06-03 11:13:03.447 | INFO     | trainer:train_loop:183 - Epoch: [9/ 100] | Train loss: [0.29048229318857194]
+2023-06-03 11:18:21.160 | INFO     | trainer:train_loop:183 - Epoch: [10/ 100] | Train loss: [0.2602704778313637]
+2023-06-03 11:23:39.265 | INFO     | trainer:train_loop:183 - Epoch: [11/ 100] | Train loss: [0.34167007339000705]
+2023-06-03 11:28:55.665 | INFO     | trainer:train_loop:183 - Epoch: [12/ 100] | Train loss: [0.27494365888834]
+2023-06-03 11:34:11.763 | INFO     | trainer:train_loop:183 - Epoch: [13/ 100] | Train loss: [0.2509314316213131]
+2023-06-03 11:39:29.970 | INFO     | trainer:train_loop:183 - Epoch: [14/ 100] | Train loss: [0.2381528932750225]
+2023-06-03 11:44:46.638 | INFO     | trainer:train_loop:183 - Epoch: [15/ 100] | Train loss: [0.2267786937057972]
+2023-06-03 11:50:05.212 | INFO     | trainer:train_loop:183 - Epoch: [16/ 100] | Train loss: [0.2507560876905918]
+2023-06-03 11:55:24.043 | INFO     | trainer:train_loop:183 - Epoch: [17/ 100] | Train loss: [0.2173609149158001]
+2023-06-03 12:00:43.069 | INFO     | trainer:train_loop:183 - Epoch: [18/ 100] | Train loss: [0.20573133066296578]
+2023-06-03 12:06:01.538 | INFO     | trainer:train_loop:183 - Epoch: [19/ 100] | Train loss: [0.20736244747042656]
+2023-06-03 12:11:20.323 | INFO     | trainer:train_loop:183 - Epoch: [20/ 100] | Train loss: [0.19540721678733824]
+2023-06-03 12:16:37.392 | INFO     | trainer:train_loop:183 - Epoch: [21/ 100] | Train loss: [0.20573725470900536]
+2023-06-03 12:21:55.875 | INFO     | trainer:train_loop:183 - Epoch: [22/ 100] | Train loss: [0.1920516003370285]
+2023-06-03 12:27:15.035 | INFO     | trainer:train_loop:183 - Epoch: [23/ 100] | Train loss: [0.19133939814567566]
+2023-06-03 12:32:33.199 | INFO     | trainer:train_loop:183 - Epoch: [24/ 100] | Train loss: [0.18972217664122581]
+2023-06-03 12:37:49.944 | INFO     | trainer:train_loop:183 - Epoch: [25/ 100] | Train loss: [0.17950107461214065]
+2023-06-03 12:43:07.811 | INFO     | trainer:train_loop:183 - Epoch: [26/ 100] | Train loss: [0.18656514373421668]
+2023-06-03 12:48:27.923 | INFO     | trainer:train_loop:183 - Epoch: [27/ 100] | Train loss: [0.18578881347179413]
+2023-06-03 12:53:47.457 | INFO     | trainer:train_loop:183 - Epoch: [28/ 100] | Train loss: [0.19933951738476755]
+2023-06-03 12:59:07.110 | INFO     | trainer:train_loop:183 - Epoch: [29/ 100] | Train loss: [0.17389095678925515]
+2023-06-03 13:04:26.897 | INFO     | trainer:train_loop:183 - Epoch: [30/ 100] | Train loss: [0.17899688842892647]
+2023-06-03 13:09:48.051 | INFO     | trainer:train_loop:183 - Epoch: [31/ 100] | Train loss: [0.18485928028821946]
+2023-06-03 13:15:05.840 | INFO     | trainer:train_loop:183 - Epoch: [32/ 100] | Train loss: [0.22566672119498252]
+2023-06-03 13:20:23.800 | INFO     | trainer:train_loop:183 - Epoch: [33/ 100] | Train loss: [0.20618986189365388]
+2023-06-03 13:25:41.808 | INFO     | trainer:train_loop:183 - Epoch: [34/ 100] | Train loss: [0.18567263740301132]
+2023-06-03 13:31:01.879 | INFO     | trainer:train_loop:183 - Epoch: [35/ 100] | Train loss: [0.15381814330816268]
+2023-06-03 13:36:21.662 | INFO     | trainer:train_loop:183 - Epoch: [36/ 100] | Train loss: [0.1608525692820549]
+2023-06-03 13:41:39.002 | INFO     | trainer:train_loop:183 - Epoch: [37/ 100] | Train loss: [0.1601155912876129]
+2023-06-03 13:46:58.476 | INFO     | trainer:train_loop:183 - Epoch: [38/ 100] | Train loss: [0.17082200196385383]
+2023-06-03 13:52:16.213 | INFO     | trainer:train_loop:183 - Epoch: [39/ 100] | Train loss: [0.156008288949728]
+2023-06-03 13:57:36.483 | INFO     | trainer:train_loop:183 - Epoch: [40/ 100] | Train loss: [0.14539552427828312]

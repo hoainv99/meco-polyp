@@ -1,0 +1,31 @@
+2022-07-09 21:07:49.182 | INFO     | __main__:main:57 - Load config from configs/neo_large.yaml
+2022-07-09 21:07:49.183 | INFO     | __main__:main:58 - {'dataset': {'data_path': '/home/s/WLIv5_pub_noud', 'train_data_path': ['/home/s/hungpv/polyps/datatest/train'], 'test_data_path': ['/home/s/hungpv/polyps/datatest/train'], 'val_data_path': ['/home/s/hungpv/polyps/datatest/train']}, 'model': {'num_classes': 3, 'save_dir': '/home/s/hungpv/polyps/checkpoints/neo_large_v2', 'backbone': 'MiT-B3', 'head': 'UPerHead', 'pretrained': '/home/s/hungpv/polyps/pretrained_models/mit_b3.pth'}, 'optimizer': {'name': 'adam', 'lr': 0.0001, 'clip': 0.5, 'scheduler': 'cosine_warmup', 'loss': 'CELoss'}, 'dev': 'cuda', 'train': {'start_from': 0, 'save_from': 39, 'num_epochs': 40, 'num_warmup_epoch': 2, 'is_val': True, 'size_rates': [0.75, 1, 1.25], 'dataloader': {'batchsize': 16, 'img_size': 352, 'shuffle': True, 'num_workers': 4, 'pin_memory': True, 'drop_last': True}, 'amp': False, 'ddp': False, 'augment': {'prob': 1, 'Flip_prob': 0.5, 'HueSaturationValue_prob': 0.5, 'RandomBrightnessContrast_prob': 0.5, 'randomrotate90_prob': 0.5}}, 'val': {'dataloader': {'batchsize': 8, 'img_size': 352, 'shuffle': True, 'num_workers': 4, 'pin_memory': True, 'drop_last': False}}, 'test': {'dev': 'cuda', 'visualize': False, 'visualize_dir': '/mnt/data/hungpv/polyps/visualize', 'vis_x': 180, 'vis_overwrite': False, 'checkpoint_dir': '/home/s/hungpv/polyps/checkpoints/neo_large_v1/MiT-B3-UPerHead_60.pth', 'dataloader': {'batchsize': 1, 'img_size': 352, 'shuffle': True, 'num_workers': 4, 'pin_memory': True, 'drop_last': False}, 'augment': {'prob': 1, 'Flip_prob': 0, 'HueSaturationValue_prob': 0, 'RandomBrightnessContrast_prob': 0, 'crop_prob': 0, 'randomrotate90_prob': 0, 'elastictransform_prob': 0, 'gridistortion_prob': 0, 'opticaldistortion_prob': 0, 'verticalflip_prob': 0, 'horizontalflip_prob': 0, 'randomgamma_prob': 0, 'CoarseDropout_prob': 0, 'RGBShift_prob': 0, 'MotionBlur_prob': 0, 'MedianBlur_prob': 0, 'GaussianBlur_prob': 0, 'GaussNoise_prob': 0, 'ChannelShuffle_prob': 0}}}
+2022-07-09 21:07:49.183 | INFO     | __main__:main:59 - Getting datapath
+2022-07-09 21:07:49.183 | INFO     | __main__:main:74 - There are 100 images to train
+2022-07-09 21:07:49.184 | INFO     | __main__:main:91 - There are 100 images to val
+2022-07-09 21:07:49.184 | INFO     | __main__:main:95 - Loading data
+2022-07-09 21:07:49.202 | INFO     | __main__:main:109 - 6 batches to train
+2022-07-09 21:07:49.218 | INFO     | __main__:main:122 - Loading model
+2022-07-09 21:07:49.218 | INFO     | __main__:main:143 - Loading checkpoint from /home/s/hungpv/polyps/pretrained_models/mit_b3.pth ...
+2022-07-09 21:07:52.369 | INFO     | __main__:main:186 - Training with FP32 ...
+2022-07-09 21:08:05.627 | INFO     | tools.trainer:val_loop:200 - Valid | Epoch [000/000], with lr = 1.25e-05, Step [0012],                    [val_loss: 11.7840]
+2022-07-09 21:08:05.727 | INFO     | aux.metrics.metrics:show:228 - Evaluate polyp
+2022-07-09 21:08:05.728 | INFO     | aux.metrics.metrics:show:229 - Macro scores: Dice: 0.084 | IOU: 0.044
+2022-07-09 21:08:05.728 | INFO     | aux.metrics.metrics:show:233 - Micro scores: Dice: 0.085 | IOU: 0.045
+2022-07-09 21:08:05.728 | INFO     | aux.metrics.metrics:show:228 - Evaluate neo
+2022-07-09 21:08:05.728 | INFO     | aux.metrics.metrics:show:229 - Macro scores: Dice: 0.074 | IOU: 0.038
+2022-07-09 21:08:05.728 | INFO     | aux.metrics.metrics:show:233 - Micro scores: Dice: 0.075 | IOU: 0.039
+2022-07-09 21:08:05.729 | INFO     | aux.metrics.metrics:show:228 - Evaluate non
+2022-07-09 21:08:05.729 | INFO     | aux.metrics.metrics:show:229 - Macro scores: Dice: 0.003 | IOU: 0.002
+2022-07-09 21:08:05.729 | INFO     | aux.metrics.metrics:show:233 - Micro scores: Dice: 0.004 | IOU: 0.002
+2022-07-09 21:08:06.148 | INFO     | tools.trainer:train_loop:112 - [Saving Snapshot:]/home/s/hungpv/polyps/checkpoints/neo_large_v2/MiT-B3-UPerHead_best.pth
+2022-07-09 21:08:17.420 | INFO     | tools.trainer:val_loop:200 - Valid | Epoch [001/001], with lr = 1.25e-05, Step [0012],                    [val_loss: 9.4655]
+2022-07-09 21:08:17.500 | INFO     | aux.metrics.metrics:show:228 - Evaluate polyp
+2022-07-09 21:08:17.501 | INFO     | aux.metrics.metrics:show:229 - Macro scores: Dice: 0.085 | IOU: 0.045
+2022-07-09 21:08:17.501 | INFO     | aux.metrics.metrics:show:233 - Micro scores: Dice: 0.087 | IOU: 0.046
+2022-07-09 21:08:17.501 | INFO     | aux.metrics.metrics:show:228 - Evaluate neo
+2022-07-09 21:08:17.501 | INFO     | aux.metrics.metrics:show:229 - Macro scores: Dice: 0.075 | IOU: 0.039
+2022-07-09 21:08:17.502 | INFO     | aux.metrics.metrics:show:233 - Micro scores: Dice: 0.077 | IOU: 0.040
+2022-07-09 21:08:17.502 | INFO     | aux.metrics.metrics:show:228 - Evaluate non
+2022-07-09 21:08:17.502 | INFO     | aux.metrics.metrics:show:229 - Macro scores: Dice: 0.002 | IOU: 0.001
+2022-07-09 21:08:17.502 | INFO     | aux.metrics.metrics:show:233 - Micro scores: Dice: 0.002 | IOU: 0.001

@@ -1,0 +1,118 @@
+dataset:
+  data_path: /home/s/WLIv5_pub_noud
+  train_data_path: 
+    - /home/s/WLIv5_pub_noud/Train
+  test_data_path:
+    - /home/s/WLIv5_pub_noud/Test
+  val_data_path:
+    - /home/s/WLIv5_pub_noud/Test
+
+model:
+  num_classes: 3
+  save_dir: neo_large_mb
+  backbone: MiT-B3
+  head: FaPNHead
+  pretrained: 'mit_b3.pth'
+  strong_threshold: 0.97
+  weak_threshold: 0.7
+  num_queries: 128
+  num_negatives: 32
+  memory_size: 10000
+
+optimizer:
+  name: adam
+  lr: 0.0001
+  clip: 0.5
+  scheduler: cosine_warmup
+  loss: multi_structure_loss
+
+dev: cuda
+
+train:
+  start_from: 0
+  save_from: 99
+  num_epochs: 100
+  num_warmup_epoch: 2
+  is_val: True
+  size_rates:
+    - 0.75
+    - 1
+    - 1.25
+
+  dataloader:
+    batchsize: 16
+    img_size: 384
+    shuffle: True
+    num_workers: 4
+    pin_memory: True
+    drop_last: True
+  amp: False
+  ddp: False
+  augment:
+    prob: 1
+    Flip_prob: 0.5
+    HueSaturationValue_prob: 0.5
+    RandomBrightnessContrast_prob: 0.5
+    crop_prob: 0.0
+    randomrotate90_prob: 0.5
+    elastictransform_prob: 0.0
+    # gridistortion_prob: 0.7
+    # opticaldistortion_prob: 0.7
+    # verticalflip_prob: 0.5
+    # horizontalflip_prob: 0.5
+    # randomgamma_prob: 0.7
+    # CoarseDropout_prob: 0.7
+    # RGBShift_prob: 0.7
+    # MotionBlur_prob: 0.7
+    # MedianBlur_prob: 0.7
+    # GaussianBlur_prob: 0.3
+    # GaussNoise_prob: 0.7
+    # ChannelShuffle_prob: 0.7
+    ColorJitter_prob: 0.5
+
+val:
+  dataloader:
+    batchsize: 8
+    img_size: 384
+    shuffle: True
+    num_workers: 4
+    pin_memory: True
+    drop_last: False
+
+
+test:
+  dev: cuda
+  visualize: True
+  visualize_dir: 'neo_visualize'
+  vis_x: 180
+  vis_overwrite: False
+  checkpoint_dir: 'checkpoints/neo_large_v10/MiT-B3-FaPNHead_150.pth'
+  dataloader:
+    batchsize: 1
+    img_size: 384 
+    shuffle: True
+    num_workers: 4
+    pin_memory: True
+    drop_last: False
+
+  augment:
+
+    prob: 1
+    Flip_prob: 0
+    HueSaturationValue_prob: 0
+    RandomBrightnessContrast_prob: 0
+    crop_prob: 0
+    randomrotate90_prob: 0
+    elastictransform_prob: 0
+    gridistortion_prob: 0
+    opticaldistortion_prob: 0
+    verticalflip_prob: 0
+    horizontalflip_prob: 0
+    randomgamma_prob: 0
+    CoarseDropout_prob: 0
+    RGBShift_prob: 0
+    MotionBlur_prob: 0
+    MedianBlur_prob: 0
+    GaussianBlur_prob: 0
+    GaussNoise_prob: 0
+    ChannelShuffle_prob: 0

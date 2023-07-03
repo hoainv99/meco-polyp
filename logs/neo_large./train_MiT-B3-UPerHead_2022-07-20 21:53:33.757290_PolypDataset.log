@@ -1,0 +1,301 @@
+2022-07-20 21:53:33.761 | INFO     | __main__:main:57 - Load config from configs/neo_large.yaml
+2022-07-20 21:53:33.761 | INFO     | __main__:main:58 - {'dataset': {'data_path': '/home/s/WLIv5_pub_noud', 'train_data_path': ['/home/s/WLIv5_pub_noud/Test'], 'test_data_path': ['/home/s/WLIv5_pub_noud/Test'], 'val_data_path': ['/home/s/WLIv5_pub_noud/Test']}, 'model': {'num_classes': 3, 'save_dir': '/home/s/hungpv/polyps/checkpoints/neo_large_v6', 'backbone': 'MiT-B3', 'head': 'UPerHead', 'pretrained': '/home/s/hungpv/polyps/pretrained_models/mit_b3.pth'}, 'optimizer': {'name': 'adam', 'lr': 0.0001, 'clip': 0.5, 'scheduler': 'cosine_warmup', 'loss': 'CustomLoss'}, 'dev': 'cuda', 'train': {'start_from': 0, 'save_from': 39, 'num_epochs': 40, 'num_warmup_epoch': 2, 'is_val': True, 'size_rates': [0.75, 1, 1.25], 'dataloader': {'batchsize': 16, 'img_size': 352, 'shuffle': True, 'num_workers': 4, 'pin_memory': True, 'drop_last': True}, 'amp': False, 'ddp': False, 'augment': {'prob': 1, 'Flip_prob': 0.5, 'HueSaturationValue_prob': 0.5, 'RandomBrightnessContrast_prob': 0.5, 'crop_prob': 0.0, 'randomrotate90_prob': 0.5, 'elastictransform_prob': 0.0, 'ColorJitter_prob': 0.5}}, 'val': {'dataloader': {'batchsize': 8, 'img_size': 352, 'shuffle': True, 'num_workers': 4, 'pin_memory': True, 'drop_last': False}}, 'test': {'dev': 'cuda', 'visualize': True, 'visualize_dir': '/home/s/hungpv/polyps/neo_visualize', 'vis_x': 180, 'vis_overwrite': False, 'checkpoint_dir': '/home/s/hungpv/polyps/checkpoints/neo_large_v6/MiT-B3-UPerHead_60.pth', 'dataloader': {'batchsize': 1, 'img_size': 352, 'shuffle': True, 'num_workers': 4, 'pin_memory': True, 'drop_last': False}, 'augment': {'prob': 1, 'Flip_prob': 0, 'HueSaturationValue_prob': 0, 'RandomBrightnessContrast_prob': 0, 'crop_prob': 0, 'randomrotate90_prob': 0, 'elastictransform_prob': 0, 'gridistortion_prob': 0, 'opticaldistortion_prob': 0, 'verticalflip_prob': 0, 'horizontalflip_prob': 0, 'randomgamma_prob': 0, 'CoarseDropout_prob': 0, 'RGBShift_prob': 0, 'MotionBlur_prob': 0, 'MedianBlur_prob': 0, 'GaussianBlur_prob': 0, 'GaussNoise_prob': 0, 'ChannelShuffle_prob': 0}}}
+2022-07-20 21:53:33.761 | INFO     | __main__:main:59 - Getting datapath
+2022-07-20 21:53:33.768 | INFO     | __main__:main:74 - There are 1353 images to train
+2022-07-20 21:53:33.774 | INFO     | __main__:main:91 - There are 1353 images to val
+2022-07-20 21:53:33.774 | INFO     | __main__:main:95 - Loading data
+2022-07-20 21:53:33.978 | INFO     | __main__:main:109 - 84 batches to train
+2022-07-20 21:53:34.178 | INFO     | __main__:main:122 - Loading model
+2022-07-20 21:53:34.178 | INFO     | __main__:main:143 - Loading checkpoint from /home/s/hungpv/polyps/pretrained_models/mit_b3.pth ...
+2022-07-20 21:53:37.318 | INFO     | __main__:main:187 - Training with FP32 ...
+2022-07-20 21:55:47.222 | INFO     | tools.trainer:val_loop:201 - Valid | Epoch [000/000], with lr = 1.25e-05, Step [0169],                    [val_loss: 1.7389]
+2022-07-20 21:55:47.319 | INFO     | aux.metrics.metrics:show:228 - Evaluate polyp
+2022-07-20 21:55:47.320 | INFO     | aux.metrics.metrics:show:229 - Macro scores: Dice: 0.093 | IOU: 0.049
+2022-07-20 21:55:47.320 | INFO     | aux.metrics.metrics:show:233 - Micro scores: Dice: 0.094 | IOU: 0.050
+2022-07-20 21:55:47.320 | INFO     | aux.metrics.metrics:show:228 - Evaluate neo
+2022-07-20 21:55:47.320 | INFO     | aux.metrics.metrics:show:229 - Macro scores: Dice: 0.070 | IOU: 0.037
+2022-07-20 21:55:47.320 | INFO     | aux.metrics.metrics:show:233 - Micro scores: Dice: 0.071 | IOU: 0.037
+2022-07-20 21:55:47.321 | INFO     | aux.metrics.metrics:show:228 - Evaluate non
+2022-07-20 21:55:47.321 | INFO     | aux.metrics.metrics:show:229 - Macro scores: Dice: 0.000 | IOU: 0.000
+2022-07-20 21:55:47.321 | INFO     | aux.metrics.metrics:show:233 - Micro scores: Dice: 0.000 | IOU: 0.000
+2022-07-20 21:55:47.740 | INFO     | tools.trainer:train_loop:113 - [Saving Snapshot:]/home/s/hungpv/polyps/checkpoints/neo_large_v6/MiT-B3-UPerHead_best.pth
+2022-07-20 21:57:56.222 | INFO     | tools.trainer:val_loop:201 - Valid | Epoch [001/001], with lr = 1.25e-05, Step [0169],                    [val_loss: 0.8099]
+2022-07-20 21:57:56.320 | INFO     | aux.metrics.metrics:show:228 - Evaluate polyp
+2022-07-20 21:57:56.321 | INFO     | aux.metrics.metrics:show:229 - Macro scores: Dice: 0.043 | IOU: 0.023
+2022-07-20 21:57:56.321 | INFO     | aux.metrics.metrics:show:233 - Micro scores: Dice: 0.049 | IOU: 0.025
+2022-07-20 21:57:56.321 | INFO     | aux.metrics.metrics:show:228 - Evaluate neo
+2022-07-20 21:57:56.322 | INFO     | aux.metrics.metrics:show:229 - Macro scores: Dice: 0.054 | IOU: 0.029
+2022-07-20 21:57:56.322 | INFO     | aux.metrics.metrics:show:233 - Micro scores: Dice: 0.065 | IOU: 0.034
+2022-07-20 21:57:56.322 | INFO     | aux.metrics.metrics:show:228 - Evaluate non
+2022-07-20 21:57:56.322 | INFO     | aux.metrics.metrics:show:229 - Macro scores: Dice: 0.001 | IOU: 0.001
+2022-07-20 21:57:56.322 | INFO     | aux.metrics.metrics:show:233 - Micro scores: Dice: 0.000 | IOU: 0.000
+2022-07-20 22:00:05.105 | INFO     | tools.trainer:val_loop:201 - Valid | Epoch [002/002], with lr = 5.6250000000000005e-05, Step [0169],                    [val_loss: 0.6745]
+2022-07-20 22:00:05.210 | INFO     | aux.metrics.metrics:show:228 - Evaluate polyp
+2022-07-20 22:00:05.211 | INFO     | aux.metrics.metrics:show:229 - Macro scores: Dice: 0.471 | IOU: 0.317
+2022-07-20 22:00:05.211 | INFO     | aux.metrics.metrics:show:233 - Micro scores: Dice: 0.487 | IOU: 0.322
+2022-07-20 22:00:05.211 | INFO     | aux.metrics.metrics:show:228 - Evaluate neo
+2022-07-20 22:00:05.211 | INFO     | aux.metrics.metrics:show:229 - Macro scores: Dice: 0.466 | IOU: 0.317
+2022-07-20 22:00:05.211 | INFO     | aux.metrics.metrics:show:233 - Micro scores: Dice: 0.492 | IOU: 0.326
+2022-07-20 22:00:05.211 | INFO     | aux.metrics.metrics:show:228 - Evaluate non
+2022-07-20 22:00:05.212 | INFO     | aux.metrics.metrics:show:229 - Macro scores: Dice: 0.025 | IOU: 0.017
+2022-07-20 22:00:05.212 | INFO     | aux.metrics.metrics:show:233 - Micro scores: Dice: 0.022 | IOU: 0.011
+2022-07-20 22:00:05.674 | INFO     | tools.trainer:train_loop:113 - [Saving Snapshot:]/home/s/hungpv/polyps/checkpoints/neo_large_v6/MiT-B3-UPerHead_best.pth
+2022-07-20 22:00:06.087 | INFO     | tools.trainer:train_loop:135 - [Saving Snapshot:]/home/s/hungpv/polyps/checkpoints/neo_large_v6/MiT-B3-UPerHead_3.pth
+2022-07-20 22:02:15.625 | INFO     | tools.trainer:val_loop:201 - Valid | Epoch [003/003], with lr = 0.0001, Step [0169],                    [val_loss: 0.4671]
+2022-07-20 22:02:15.728 | INFO     | aux.metrics.metrics:show:228 - Evaluate polyp
+2022-07-20 22:02:15.728 | INFO     | aux.metrics.metrics:show:229 - Macro scores: Dice: 0.645 | IOU: 0.490
+2022-07-20 22:02:15.729 | INFO     | aux.metrics.metrics:show:233 - Micro scores: Dice: 0.643 | IOU: 0.474
+2022-07-20 22:02:15.729 | INFO     | aux.metrics.metrics:show:228 - Evaluate neo
+2022-07-20 22:02:15.729 | INFO     | aux.metrics.metrics:show:229 - Macro scores: Dice: 0.523 | IOU: 0.383
+2022-07-20 22:02:15.729 | INFO     | aux.metrics.metrics:show:233 - Micro scores: Dice: 0.556 | IOU: 0.385
+2022-07-20 22:02:15.729 | INFO     | aux.metrics.metrics:show:228 - Evaluate non
+2022-07-20 22:02:15.729 | INFO     | aux.metrics.metrics:show:229 - Macro scores: Dice: 0.308 | IOU: 0.198
+2022-07-20 22:02:15.730 | INFO     | aux.metrics.metrics:show:233 - Micro scores: Dice: 0.313 | IOU: 0.186
+2022-07-20 22:02:16.184 | INFO     | tools.trainer:train_loop:113 - [Saving Snapshot:]/home/s/hungpv/polyps/checkpoints/neo_large_v6/MiT-B3-UPerHead_best.pth
+2022-07-20 22:04:25.040 | INFO     | tools.trainer:val_loop:201 - Valid | Epoch [004/004], with lr = 0.0001, Step [0169],                    [val_loss: 0.3389]
+2022-07-20 22:04:25.141 | INFO     | aux.metrics.metrics:show:228 - Evaluate polyp
+2022-07-20 22:04:25.141 | INFO     | aux.metrics.metrics:show:229 - Macro scores: Dice: 0.716 | IOU: 0.569
+2022-07-20 22:04:25.141 | INFO     | aux.metrics.metrics:show:233 - Micro scores: Dice: 0.717 | IOU: 0.559
+2022-07-20 22:04:25.142 | INFO     | aux.metrics.metrics:show:228 - Evaluate neo
+2022-07-20 22:04:25.142 | INFO     | aux.metrics.metrics:show:229 - Macro scores: Dice: 0.694 | IOU: 0.548
+2022-07-20 22:04:25.142 | INFO     | aux.metrics.metrics:show:233 - Micro scores: Dice: 0.716 | IOU: 0.557
+2022-07-20 22:04:25.142 | INFO     | aux.metrics.metrics:show:228 - Evaluate non
+2022-07-20 22:04:25.142 | INFO     | aux.metrics.metrics:show:229 - Macro scores: Dice: 0.446 | IOU: 0.305
+2022-07-20 22:04:25.143 | INFO     | aux.metrics.metrics:show:233 - Micro scores: Dice: 0.423 | IOU: 0.268
+2022-07-20 22:04:25.604 | INFO     | tools.trainer:train_loop:113 - [Saving Snapshot:]/home/s/hungpv/polyps/checkpoints/neo_large_v6/MiT-B3-UPerHead_best.pth
+2022-07-20 22:06:34.229 | INFO     | tools.trainer:val_loop:201 - Valid | Epoch [005/005], with lr = 9.938441702975689e-05, Step [0169],                    [val_loss: 0.3292]
+2022-07-20 22:06:34.337 | INFO     | aux.metrics.metrics:show:228 - Evaluate polyp
+2022-07-20 22:06:34.338 | INFO     | aux.metrics.metrics:show:229 - Macro scores: Dice: 0.718 | IOU: 0.580
+2022-07-20 22:06:34.338 | INFO     | aux.metrics.metrics:show:233 - Micro scores: Dice: 0.718 | IOU: 0.560
+2022-07-20 22:06:34.338 | INFO     | aux.metrics.metrics:show:228 - Evaluate neo
+2022-07-20 22:06:34.339 | INFO     | aux.metrics.metrics:show:229 - Macro scores: Dice: 0.714 | IOU: 0.580
+2022-07-20 22:06:34.339 | INFO     | aux.metrics.metrics:show:233 - Micro scores: Dice: 0.739 | IOU: 0.586
+2022-07-20 22:06:34.339 | INFO     | aux.metrics.metrics:show:228 - Evaluate non
+2022-07-20 22:06:34.339 | INFO     | aux.metrics.metrics:show:229 - Macro scores: Dice: 0.460 | IOU: 0.325
+2022-07-20 22:06:34.339 | INFO     | aux.metrics.metrics:show:233 - Micro scores: Dice: 0.400 | IOU: 0.250
+2022-07-20 22:06:34.797 | INFO     | tools.trainer:train_loop:113 - [Saving Snapshot:]/home/s/hungpv/polyps/checkpoints/neo_large_v6/MiT-B3-UPerHead_best.pth
+2022-07-20 22:08:45.462 | INFO     | tools.trainer:val_loop:201 - Valid | Epoch [006/006], with lr = 9.861849601988383e-05, Step [0169],                    [val_loss: 0.3231]
+2022-07-20 22:08:45.563 | INFO     | aux.metrics.metrics:show:228 - Evaluate polyp
+2022-07-20 22:08:45.564 | INFO     | aux.metrics.metrics:show:229 - Macro scores: Dice: 0.731 | IOU: 0.595
+2022-07-20 22:08:45.564 | INFO     | aux.metrics.metrics:show:233 - Micro scores: Dice: 0.731 | IOU: 0.576
+2022-07-20 22:08:45.564 | INFO     | aux.metrics.metrics:show:228 - Evaluate neo
+2022-07-20 22:08:45.564 | INFO     | aux.metrics.metrics:show:229 - Macro scores: Dice: 0.718 | IOU: 0.590
+2022-07-20 22:08:45.564 | INFO     | aux.metrics.metrics:show:233 - Micro scores: Dice: 0.752 | IOU: 0.603
+2022-07-20 22:08:45.565 | INFO     | aux.metrics.metrics:show:228 - Evaluate non
+2022-07-20 22:08:45.565 | INFO     | aux.metrics.metrics:show:229 - Macro scores: Dice: 0.436 | IOU: 0.302
+2022-07-20 22:08:45.565 | INFO     | aux.metrics.metrics:show:233 - Micro scores: Dice: 0.380 | IOU: 0.235
+2022-07-20 22:08:46.034 | INFO     | tools.trainer:train_loop:113 - [Saving Snapshot:]/home/s/hungpv/polyps/checkpoints/neo_large_v6/MiT-B3-UPerHead_best.pth
+2022-07-20 22:11:06.336 | INFO     | tools.trainer:val_loop:201 - Valid | Epoch [007/007], with lr = 9.755282581475769e-05, Step [0169],                    [val_loss: 0.2697]
+2022-07-20 22:11:06.425 | INFO     | aux.metrics.metrics:show:228 - Evaluate polyp
+2022-07-20 22:11:06.425 | INFO     | aux.metrics.metrics:show:229 - Macro scores: Dice: 0.796 | IOU: 0.674
+2022-07-20 22:11:06.425 | INFO     | aux.metrics.metrics:show:233 - Micro scores: Dice: 0.794 | IOU: 0.659
+2022-07-20 22:11:06.425 | INFO     | aux.metrics.metrics:show:228 - Evaluate neo
+2022-07-20 22:11:06.425 | INFO     | aux.metrics.metrics:show:229 - Macro scores: Dice: 0.775 | IOU: 0.654
+2022-07-20 22:11:06.425 | INFO     | aux.metrics.metrics:show:233 - Micro scores: Dice: 0.801 | IOU: 0.668
+2022-07-20 22:11:06.426 | INFO     | aux.metrics.metrics:show:228 - Evaluate non
+2022-07-20 22:11:06.426 | INFO     | aux.metrics.metrics:show:229 - Macro scores: Dice: 0.522 | IOU: 0.374
+2022-07-20 22:11:06.426 | INFO     | aux.metrics.metrics:show:233 - Micro scores: Dice: 0.491 | IOU: 0.325
+2022-07-20 22:11:06.891 | INFO     | tools.trainer:train_loop:113 - [Saving Snapshot:]/home/s/hungpv/polyps/checkpoints/neo_large_v6/MiT-B3-UPerHead_best.pth
+2022-07-20 22:13:27.886 | INFO     | tools.trainer:val_loop:201 - Valid | Epoch [008/008], with lr = 9.619397662556435e-05, Step [0169],                    [val_loss: 0.2597]
+2022-07-20 22:13:27.992 | INFO     | aux.metrics.metrics:show:228 - Evaluate polyp
+2022-07-20 22:13:27.993 | INFO     | aux.metrics.metrics:show:229 - Macro scores: Dice: 0.800 | IOU: 0.681
+2022-07-20 22:13:27.993 | INFO     | aux.metrics.metrics:show:233 - Micro scores: Dice: 0.797 | IOU: 0.663
+2022-07-20 22:13:27.993 | INFO     | aux.metrics.metrics:show:228 - Evaluate neo
+2022-07-20 22:13:27.994 | INFO     | aux.metrics.metrics:show:229 - Macro scores: Dice: 0.775 | IOU: 0.658
+2022-07-20 22:13:27.994 | INFO     | aux.metrics.metrics:show:233 - Micro scores: Dice: 0.807 | IOU: 0.677
+2022-07-20 22:13:27.994 | INFO     | aux.metrics.metrics:show:228 - Evaluate non
+2022-07-20 22:13:27.994 | INFO     | aux.metrics.metrics:show:229 - Macro scores: Dice: 0.551 | IOU: 0.408
+2022-07-20 22:13:27.994 | INFO     | aux.metrics.metrics:show:233 - Micro scores: Dice: 0.517 | IOU: 0.349
+2022-07-20 22:13:28.459 | INFO     | tools.trainer:train_loop:113 - [Saving Snapshot:]/home/s/hungpv/polyps/checkpoints/neo_large_v6/MiT-B3-UPerHead_best.pth
+2022-07-20 22:15:50.030 | INFO     | tools.trainer:val_loop:201 - Valid | Epoch [009/009], with lr = 9.45503262094184e-05, Step [0169],                    [val_loss: 0.2083]
+2022-07-20 22:15:50.130 | INFO     | aux.metrics.metrics:show:228 - Evaluate polyp
+2022-07-20 22:15:50.130 | INFO     | aux.metrics.metrics:show:229 - Macro scores: Dice: 0.834 | IOU: 0.728
+2022-07-20 22:15:50.130 | INFO     | aux.metrics.metrics:show:233 - Micro scores: Dice: 0.836 | IOU: 0.718
+2022-07-20 22:15:50.131 | INFO     | aux.metrics.metrics:show:228 - Evaluate neo
+2022-07-20 22:15:50.131 | INFO     | aux.metrics.metrics:show:229 - Macro scores: Dice: 0.800 | IOU: 0.697
+2022-07-20 22:15:50.131 | INFO     | aux.metrics.metrics:show:233 - Micro scores: Dice: 0.840 | IOU: 0.724
+2022-07-20 22:15:50.131 | INFO     | aux.metrics.metrics:show:228 - Evaluate non
+2022-07-20 22:15:50.131 | INFO     | aux.metrics.metrics:show:229 - Macro scores: Dice: 0.628 | IOU: 0.486
+2022-07-20 22:15:50.131 | INFO     | aux.metrics.metrics:show:233 - Micro scores: Dice: 0.618 | IOU: 0.447
+2022-07-20 22:15:50.596 | INFO     | tools.trainer:train_loop:113 - [Saving Snapshot:]/home/s/hungpv/polyps/checkpoints/neo_large_v6/MiT-B3-UPerHead_best.pth
+2022-07-20 22:18:13.938 | INFO     | tools.trainer:val_loop:201 - Valid | Epoch [010/010], with lr = 9.263200821770461e-05, Step [0169],                    [val_loss: 0.1926]
+2022-07-20 22:18:14.042 | INFO     | aux.metrics.metrics:show:228 - Evaluate polyp
+2022-07-20 22:18:14.042 | INFO     | aux.metrics.metrics:show:229 - Macro scores: Dice: 0.838 | IOU: 0.733
+2022-07-20 22:18:14.042 | INFO     | aux.metrics.metrics:show:233 - Micro scores: Dice: 0.837 | IOU: 0.719
+2022-07-20 22:18:14.042 | INFO     | aux.metrics.metrics:show:228 - Evaluate neo
+2022-07-20 22:18:14.042 | INFO     | aux.metrics.metrics:show:229 - Macro scores: Dice: 0.818 | IOU: 0.716
+2022-07-20 22:18:14.043 | INFO     | aux.metrics.metrics:show:233 - Micro scores: Dice: 0.851 | IOU: 0.741
+2022-07-20 22:18:14.043 | INFO     | aux.metrics.metrics:show:228 - Evaluate non
+2022-07-20 22:18:14.043 | INFO     | aux.metrics.metrics:show:229 - Macro scores: Dice: 0.634 | IOU: 0.496
+2022-07-20 22:18:14.043 | INFO     | aux.metrics.metrics:show:233 - Micro scores: Dice: 0.606 | IOU: 0.435
+2022-07-20 22:18:14.506 | INFO     | tools.trainer:train_loop:113 - [Saving Snapshot:]/home/s/hungpv/polyps/checkpoints/neo_large_v6/MiT-B3-UPerHead_best.pth
+2022-07-20 22:20:36.768 | INFO     | tools.trainer:val_loop:201 - Valid | Epoch [011/011], with lr = 9.045084971874738e-05, Step [0169],                    [val_loss: 0.2137]
+2022-07-20 22:20:36.874 | INFO     | aux.metrics.metrics:show:228 - Evaluate polyp
+2022-07-20 22:20:36.875 | INFO     | aux.metrics.metrics:show:229 - Macro scores: Dice: 0.847 | IOU: 0.747
+2022-07-20 22:20:36.875 | INFO     | aux.metrics.metrics:show:233 - Micro scores: Dice: 0.852 | IOU: 0.742
+2022-07-20 22:20:36.875 | INFO     | aux.metrics.metrics:show:228 - Evaluate neo
+2022-07-20 22:20:36.875 | INFO     | aux.metrics.metrics:show:229 - Macro scores: Dice: 0.815 | IOU: 0.709
+2022-07-20 22:20:36.876 | INFO     | aux.metrics.metrics:show:233 - Micro scores: Dice: 0.846 | IOU: 0.733
+2022-07-20 22:20:36.876 | INFO     | aux.metrics.metrics:show:228 - Evaluate non
+2022-07-20 22:20:36.876 | INFO     | aux.metrics.metrics:show:229 - Macro scores: Dice: 0.640 | IOU: 0.499
+2022-07-20 22:20:36.876 | INFO     | aux.metrics.metrics:show:233 - Micro scores: Dice: 0.635 | IOU: 0.465
+2022-07-20 22:20:37.343 | INFO     | tools.trainer:train_loop:113 - [Saving Snapshot:]/home/s/hungpv/polyps/checkpoints/neo_large_v6/MiT-B3-UPerHead_best.pth
+2022-07-20 22:23:00.750 | INFO     | tools.trainer:val_loop:201 - Valid | Epoch [012/012], with lr = 8.802029828000156e-05, Step [0169],                    [val_loss: 0.2170]
+2022-07-20 22:23:00.844 | INFO     | aux.metrics.metrics:show:228 - Evaluate polyp
+2022-07-20 22:23:00.844 | INFO     | aux.metrics.metrics:show:229 - Macro scores: Dice: 0.846 | IOU: 0.743
+2022-07-20 22:23:00.845 | INFO     | aux.metrics.metrics:show:233 - Micro scores: Dice: 0.845 | IOU: 0.732
+2022-07-20 22:23:00.845 | INFO     | aux.metrics.metrics:show:228 - Evaluate neo
+2022-07-20 22:23:00.845 | INFO     | aux.metrics.metrics:show:229 - Macro scores: Dice: 0.790 | IOU: 0.678
+2022-07-20 22:23:00.845 | INFO     | aux.metrics.metrics:show:233 - Micro scores: Dice: 0.826 | IOU: 0.703
+2022-07-20 22:23:00.845 | INFO     | aux.metrics.metrics:show:228 - Evaluate non
+2022-07-20 22:23:00.845 | INFO     | aux.metrics.metrics:show:229 - Macro scores: Dice: 0.625 | IOU: 0.484
+2022-07-20 22:23:00.846 | INFO     | aux.metrics.metrics:show:233 - Micro scores: Dice: 0.619 | IOU: 0.448
+2022-07-20 22:25:25.795 | INFO     | tools.trainer:val_loop:201 - Valid | Epoch [013/013], with lr = 8.535533905932738e-05, Step [0169],                    [val_loss: 0.1475]
+2022-07-20 22:25:25.903 | INFO     | aux.metrics.metrics:show:228 - Evaluate polyp
+2022-07-20 22:25:25.904 | INFO     | aux.metrics.metrics:show:229 - Macro scores: Dice: 0.862 | IOU: 0.768
+2022-07-20 22:25:25.904 | INFO     | aux.metrics.metrics:show:233 - Micro scores: Dice: 0.864 | IOU: 0.760
+2022-07-20 22:25:25.904 | INFO     | aux.metrics.metrics:show:228 - Evaluate neo
+2022-07-20 22:25:25.904 | INFO     | aux.metrics.metrics:show:229 - Macro scores: Dice: 0.861 | IOU: 0.771
+2022-07-20 22:25:25.905 | INFO     | aux.metrics.metrics:show:233 - Micro scores: Dice: 0.880 | IOU: 0.786
+2022-07-20 22:25:25.905 | INFO     | aux.metrics.metrics:show:228 - Evaluate non
+2022-07-20 22:25:25.905 | INFO     | aux.metrics.metrics:show:229 - Macro scores: Dice: 0.683 | IOU: 0.549
+2022-07-20 22:25:25.905 | INFO     | aux.metrics.metrics:show:233 - Micro scores: Dice: 0.675 | IOU: 0.510
+2022-07-20 22:25:26.377 | INFO     | tools.trainer:train_loop:113 - [Saving Snapshot:]/home/s/hungpv/polyps/checkpoints/neo_large_v6/MiT-B3-UPerHead_best.pth
+2022-07-20 22:27:51.807 | INFO     | tools.trainer:val_loop:201 - Valid | Epoch [014/014], with lr = 8.247240241650919e-05, Step [0169],                    [val_loss: 0.2568]
+2022-07-20 22:27:51.912 | INFO     | aux.metrics.metrics:show:228 - Evaluate polyp
+2022-07-20 22:27:51.913 | INFO     | aux.metrics.metrics:show:229 - Macro scores: Dice: 0.850 | IOU: 0.748
+2022-07-20 22:27:51.913 | INFO     | aux.metrics.metrics:show:233 - Micro scores: Dice: 0.848 | IOU: 0.736
+2022-07-20 22:27:51.913 | INFO     | aux.metrics.metrics:show:228 - Evaluate neo
+2022-07-20 22:27:51.913 | INFO     | aux.metrics.metrics:show:229 - Macro scores: Dice: 0.785 | IOU: 0.677
+2022-07-20 22:27:51.913 | INFO     | aux.metrics.metrics:show:233 - Micro scores: Dice: 0.829 | IOU: 0.709
+2022-07-20 22:27:51.914 | INFO     | aux.metrics.metrics:show:228 - Evaluate non
+2022-07-20 22:27:51.914 | INFO     | aux.metrics.metrics:show:229 - Macro scores: Dice: 0.640 | IOU: 0.494
+2022-07-20 22:27:51.914 | INFO     | aux.metrics.metrics:show:233 - Micro scores: Dice: 0.637 | IOU: 0.467
+2022-07-20 22:30:18.109 | INFO     | tools.trainer:val_loop:201 - Valid | Epoch [015/015], with lr = 7.938926261462366e-05, Step [0169],                    [val_loss: 0.1907]
+2022-07-20 22:30:18.203 | INFO     | aux.metrics.metrics:show:228 - Evaluate polyp
+2022-07-20 22:30:18.203 | INFO     | aux.metrics.metrics:show:229 - Macro scores: Dice: 0.870 | IOU: 0.780
+2022-07-20 22:30:18.203 | INFO     | aux.metrics.metrics:show:233 - Micro scores: Dice: 0.869 | IOU: 0.768
+2022-07-20 22:30:18.204 | INFO     | aux.metrics.metrics:show:228 - Evaluate neo
+2022-07-20 22:30:18.204 | INFO     | aux.metrics.metrics:show:229 - Macro scores: Dice: 0.823 | IOU: 0.723
+2022-07-20 22:30:18.204 | INFO     | aux.metrics.metrics:show:233 - Micro scores: Dice: 0.857 | IOU: 0.750
+2022-07-20 22:30:18.204 | INFO     | aux.metrics.metrics:show:228 - Evaluate non
+2022-07-20 22:30:18.204 | INFO     | aux.metrics.metrics:show:229 - Macro scores: Dice: 0.658 | IOU: 0.518
+2022-07-20 22:30:18.205 | INFO     | aux.metrics.metrics:show:233 - Micro scores: Dice: 0.653 | IOU: 0.485
+2022-07-20 22:32:44.052 | INFO     | tools.trainer:val_loop:201 - Valid | Epoch [016/016], with lr = 7.612492823579745e-05, Step [0169],                    [val_loss: 0.1639]
+2022-07-20 22:32:44.153 | INFO     | aux.metrics.metrics:show:228 - Evaluate polyp
+2022-07-20 22:32:44.154 | INFO     | aux.metrics.metrics:show:229 - Macro scores: Dice: 0.887 | IOU: 0.803
+2022-07-20 22:32:44.154 | INFO     | aux.metrics.metrics:show:233 - Micro scores: Dice: 0.892 | IOU: 0.804
+2022-07-20 22:32:44.154 | INFO     | aux.metrics.metrics:show:228 - Evaluate neo
+2022-07-20 22:32:44.154 | INFO     | aux.metrics.metrics:show:229 - Macro scores: Dice: 0.853 | IOU: 0.761
+2022-07-20 22:32:44.155 | INFO     | aux.metrics.metrics:show:233 - Micro scores: Dice: 0.885 | IOU: 0.794
+2022-07-20 22:32:44.155 | INFO     | aux.metrics.metrics:show:228 - Evaluate non
+2022-07-20 22:32:44.155 | INFO     | aux.metrics.metrics:show:229 - Macro scores: Dice: 0.700 | IOU: 0.565
+2022-07-20 22:32:44.155 | INFO     | aux.metrics.metrics:show:233 - Micro scores: Dice: 0.717 | IOU: 0.559
+2022-07-20 22:32:44.623 | INFO     | tools.trainer:train_loop:113 - [Saving Snapshot:]/home/s/hungpv/polyps/checkpoints/neo_large_v6/MiT-B3-UPerHead_best.pth
+2022-07-20 22:35:09.695 | INFO     | tools.trainer:val_loop:201 - Valid | Epoch [017/017], with lr = 7.269952498697734e-05, Step [0169],                    [val_loss: 0.1331]
+2022-07-20 22:35:09.800 | INFO     | aux.metrics.metrics:show:228 - Evaluate polyp
+2022-07-20 22:35:09.801 | INFO     | aux.metrics.metrics:show:229 - Macro scores: Dice: 0.890 | IOU: 0.806
+2022-07-20 22:35:09.801 | INFO     | aux.metrics.metrics:show:233 - Micro scores: Dice: 0.892 | IOU: 0.805
+2022-07-20 22:35:09.801 | INFO     | aux.metrics.metrics:show:228 - Evaluate neo
+2022-07-20 22:35:09.802 | INFO     | aux.metrics.metrics:show:229 - Macro scores: Dice: 0.862 | IOU: 0.774
+2022-07-20 22:35:09.802 | INFO     | aux.metrics.metrics:show:233 - Micro scores: Dice: 0.883 | IOU: 0.791
+2022-07-20 22:35:09.802 | INFO     | aux.metrics.metrics:show:228 - Evaluate non
+2022-07-20 22:35:09.802 | INFO     | aux.metrics.metrics:show:229 - Macro scores: Dice: 0.725 | IOU: 0.595
+2022-07-20 22:35:09.802 | INFO     | aux.metrics.metrics:show:233 - Micro scores: Dice: 0.755 | IOU: 0.606
+2022-07-20 22:35:10.274 | INFO     | tools.trainer:train_loop:113 - [Saving Snapshot:]/home/s/hungpv/polyps/checkpoints/neo_large_v6/MiT-B3-UPerHead_best.pth
+2022-07-20 22:37:35.900 | INFO     | tools.trainer:val_loop:201 - Valid | Epoch [018/018], with lr = 6.91341716182545e-05, Step [0169],                    [val_loss: 0.1309]
+2022-07-20 22:37:36.003 | INFO     | aux.metrics.metrics:show:228 - Evaluate polyp
+2022-07-20 22:37:36.003 | INFO     | aux.metrics.metrics:show:229 - Macro scores: Dice: 0.894 | IOU: 0.812
+2022-07-20 22:37:36.003 | INFO     | aux.metrics.metrics:show:233 - Micro scores: Dice: 0.899 | IOU: 0.816
+2022-07-20 22:37:36.003 | INFO     | aux.metrics.metrics:show:228 - Evaluate neo
+2022-07-20 22:37:36.003 | INFO     | aux.metrics.metrics:show:229 - Macro scores: Dice: 0.874 | IOU: 0.789
+2022-07-20 22:37:36.004 | INFO     | aux.metrics.metrics:show:233 - Micro scores: Dice: 0.899 | IOU: 0.817
+2022-07-20 22:37:36.004 | INFO     | aux.metrics.metrics:show:228 - Evaluate non
+2022-07-20 22:37:36.004 | INFO     | aux.metrics.metrics:show:229 - Macro scores: Dice: 0.736 | IOU: 0.605
+2022-07-20 22:37:36.004 | INFO     | aux.metrics.metrics:show:233 - Micro scores: Dice: 0.767 | IOU: 0.621
+2022-07-20 22:37:36.482 | INFO     | tools.trainer:train_loop:113 - [Saving Snapshot:]/home/s/hungpv/polyps/checkpoints/neo_large_v6/MiT-B3-UPerHead_best.pth
+2022-07-20 22:40:01.139 | INFO     | tools.trainer:val_loop:201 - Valid | Epoch [019/019], with lr = 6.545084971874738e-05, Step [0169],                    [val_loss: 0.1413]
+2022-07-20 22:40:01.238 | INFO     | aux.metrics.metrics:show:228 - Evaluate polyp
+2022-07-20 22:40:01.239 | INFO     | aux.metrics.metrics:show:229 - Macro scores: Dice: 0.906 | IOU: 0.831
+2022-07-20 22:40:01.239 | INFO     | aux.metrics.metrics:show:233 - Micro scores: Dice: 0.909 | IOU: 0.834
+2022-07-20 22:40:01.239 | INFO     | aux.metrics.metrics:show:228 - Evaluate neo
+2022-07-20 22:40:01.239 | INFO     | aux.metrics.metrics:show:229 - Macro scores: Dice: 0.863 | IOU: 0.780
+2022-07-20 22:40:01.240 | INFO     | aux.metrics.metrics:show:233 - Micro scores: Dice: 0.901 | IOU: 0.819
+2022-07-20 22:40:01.240 | INFO     | aux.metrics.metrics:show:228 - Evaluate non
+2022-07-20 22:40:01.240 | INFO     | aux.metrics.metrics:show:229 - Macro scores: Dice: 0.753 | IOU: 0.625
+2022-07-20 22:40:01.240 | INFO     | aux.metrics.metrics:show:233 - Micro scores: Dice: 0.787 | IOU: 0.649
+2022-07-20 22:40:01.703 | INFO     | tools.trainer:train_loop:113 - [Saving Snapshot:]/home/s/hungpv/polyps/checkpoints/neo_large_v6/MiT-B3-UPerHead_best.pth
+2022-07-20 22:42:27.007 | INFO     | tools.trainer:val_loop:201 - Valid | Epoch [020/020], with lr = 6.167226819279528e-05, Step [0169],                    [val_loss: 0.1435]
+2022-07-20 22:42:27.114 | INFO     | aux.metrics.metrics:show:228 - Evaluate polyp
+2022-07-20 22:42:27.114 | INFO     | aux.metrics.metrics:show:229 - Macro scores: Dice: 0.902 | IOU: 0.827
+2022-07-20 22:42:27.114 | INFO     | aux.metrics.metrics:show:233 - Micro scores: Dice: 0.902 | IOU: 0.821
+2022-07-20 22:42:27.115 | INFO     | aux.metrics.metrics:show:228 - Evaluate neo
+2022-07-20 22:42:27.115 | INFO     | aux.metrics.metrics:show:229 - Macro scores: Dice: 0.879 | IOU: 0.798
+2022-07-20 22:42:27.115 | INFO     | aux.metrics.metrics:show:233 - Micro scores: Dice: 0.901 | IOU: 0.820
+2022-07-20 22:42:27.115 | INFO     | aux.metrics.metrics:show:228 - Evaluate non
+2022-07-20 22:42:27.115 | INFO     | aux.metrics.metrics:show:229 - Macro scores: Dice: 0.739 | IOU: 0.610
+2022-07-20 22:42:27.115 | INFO     | aux.metrics.metrics:show:233 - Micro scores: Dice: 0.762 | IOU: 0.616
+2022-07-20 22:44:52.025 | INFO     | tools.trainer:val_loop:201 - Valid | Epoch [021/021], with lr = 5.782172325201155e-05, Step [0169],                    [val_loss: 0.1171]
+2022-07-20 22:44:52.135 | INFO     | aux.metrics.metrics:show:228 - Evaluate polyp
+2022-07-20 22:44:52.135 | INFO     | aux.metrics.metrics:show:229 - Macro scores: Dice: 0.907 | IOU: 0.833
+2022-07-20 22:44:52.136 | INFO     | aux.metrics.metrics:show:233 - Micro scores: Dice: 0.910 | IOU: 0.835
+2022-07-20 22:44:52.136 | INFO     | aux.metrics.metrics:show:228 - Evaluate neo
+2022-07-20 22:44:52.136 | INFO     | aux.metrics.metrics:show:229 - Macro scores: Dice: 0.893 | IOU: 0.819
+2022-07-20 22:44:52.136 | INFO     | aux.metrics.metrics:show:233 - Micro scores: Dice: 0.915 | IOU: 0.843
+2022-07-20 22:44:52.136 | INFO     | aux.metrics.metrics:show:228 - Evaluate non
+2022-07-20 22:44:52.136 | INFO     | aux.metrics.metrics:show:229 - Macro scores: Dice: 0.777 | IOU: 0.656
+2022-07-20 22:44:52.136 | INFO     | aux.metrics.metrics:show:233 - Micro scores: Dice: 0.798 | IOU: 0.663
+2022-07-20 22:44:52.617 | INFO     | tools.trainer:train_loop:113 - [Saving Snapshot:]/home/s/hungpv/polyps/checkpoints/neo_large_v6/MiT-B3-UPerHead_best.pth
+2022-07-20 22:47:18.112 | INFO     | tools.trainer:val_loop:201 - Valid | Epoch [022/022], with lr = 5.392295478639225e-05, Step [0169],                    [val_loss: 0.0922]
+2022-07-20 22:47:18.210 | INFO     | aux.metrics.metrics:show:228 - Evaluate polyp
+2022-07-20 22:47:18.210 | INFO     | aux.metrics.metrics:show:229 - Macro scores: Dice: 0.912 | IOU: 0.842
+2022-07-20 22:47:18.210 | INFO     | aux.metrics.metrics:show:233 - Micro scores: Dice: 0.917 | IOU: 0.847
+2022-07-20 22:47:18.210 | INFO     | aux.metrics.metrics:show:228 - Evaluate neo
+2022-07-20 22:47:18.211 | INFO     | aux.metrics.metrics:show:229 - Macro scores: Dice: 0.891 | IOU: 0.821
+2022-07-20 22:47:18.211 | INFO     | aux.metrics.metrics:show:233 - Micro scores: Dice: 0.922 | IOU: 0.855
+2022-07-20 22:47:18.211 | INFO     | aux.metrics.metrics:show:228 - Evaluate non
+2022-07-20 22:47:18.211 | INFO     | aux.metrics.metrics:show:229 - Macro scores: Dice: 0.794 | IOU: 0.675
+2022-07-20 22:47:18.211 | INFO     | aux.metrics.metrics:show:233 - Micro scores: Dice: 0.814 | IOU: 0.687
+2022-07-20 22:47:18.673 | INFO     | tools.trainer:train_loop:113 - [Saving Snapshot:]/home/s/hungpv/polyps/checkpoints/neo_large_v6/MiT-B3-UPerHead_best.pth
+2022-07-20 22:49:35.955 | INFO     | tools.trainer:val_loop:201 - Valid | Epoch [023/023], with lr = 5e-05, Step [0169],                    [val_loss: 0.0813]
+2022-07-20 22:49:36.058 | INFO     | aux.metrics.metrics:show:228 - Evaluate polyp
+2022-07-20 22:49:36.058 | INFO     | aux.metrics.metrics:show:229 - Macro scores: Dice: 0.910 | IOU: 0.837
+2022-07-20 22:49:36.058 | INFO     | aux.metrics.metrics:show:233 - Micro scores: Dice: 0.913 | IOU: 0.840
+2022-07-20 22:49:36.059 | INFO     | aux.metrics.metrics:show:228 - Evaluate neo
+2022-07-20 22:49:36.059 | INFO     | aux.metrics.metrics:show:229 - Macro scores: Dice: 0.894 | IOU: 0.818
+2022-07-20 22:49:36.059 | INFO     | aux.metrics.metrics:show:233 - Micro scores: Dice: 0.916 | IOU: 0.845
+2022-07-20 22:49:36.059 | INFO     | aux.metrics.metrics:show:228 - Evaluate non
+2022-07-20 22:49:36.059 | INFO     | aux.metrics.metrics:show:229 - Macro scores: Dice: 0.803 | IOU: 0.689
+2022-07-20 22:49:36.060 | INFO     | aux.metrics.metrics:show:233 - Micro scores: Dice: 0.822 | IOU: 0.698
+2022-07-20 22:51:45.300 | INFO     | tools.trainer:val_loop:201 - Valid | Epoch [024/024], with lr = 4.607704521360776e-05, Step [0169],                    [val_loss: 0.0882]
+2022-07-20 22:51:45.395 | INFO     | aux.metrics.metrics:show:228 - Evaluate polyp
+2022-07-20 22:51:45.396 | INFO     | aux.metrics.metrics:show:229 - Macro scores: Dice: 0.921 | IOU: 0.856
+2022-07-20 22:51:45.396 | INFO     | aux.metrics.metrics:show:233 - Micro scores: Dice: 0.924 | IOU: 0.858
+2022-07-20 22:51:45.396 | INFO     | aux.metrics.metrics:show:228 - Evaluate neo
+2022-07-20 22:51:45.396 | INFO     | aux.metrics.metrics:show:229 - Macro scores: Dice: 0.913 | IOU: 0.845
+2022-07-20 22:51:45.396 | INFO     | aux.metrics.metrics:show:233 - Micro scores: Dice: 0.928 | IOU: 0.865
+2022-07-20 22:51:45.396 | INFO     | aux.metrics.metrics:show:228 - Evaluate non
+2022-07-20 22:51:45.396 | INFO     | aux.metrics.metrics:show:229 - Macro scores: Dice: 0.802 | IOU: 0.686
+2022-07-20 22:51:45.396 | INFO     | aux.metrics.metrics:show:233 - Micro scores: Dice: 0.831 | IOU: 0.711
+2022-07-20 22:51:45.855 | INFO     | tools.trainer:train_loop:113 - [Saving Snapshot:]/home/s/hungpv/polyps/checkpoints/neo_large_v6/MiT-B3-UPerHead_best.pth
+2022-07-20 22:53:55.176 | INFO     | tools.trainer:val_loop:201 - Valid | Epoch [025/025], with lr = 4.217827674798847e-05, Step [0169],                    [val_loss: 0.0878]
+2022-07-20 22:53:55.278 | INFO     | aux.metrics.metrics:show:228 - Evaluate polyp
+2022-07-20 22:53:55.278 | INFO     | aux.metrics.metrics:show:229 - Macro scores: Dice: 0.918 | IOU: 0.851
+2022-07-20 22:53:55.279 | INFO     | aux.metrics.metrics:show:233 - Micro scores: Dice: 0.921 | IOU: 0.853
+2022-07-20 22:53:55.279 | INFO     | aux.metrics.metrics:show:228 - Evaluate neo
+2022-07-20 22:53:55.279 | INFO     | aux.metrics.metrics:show:229 - Macro scores: Dice: 0.911 | IOU: 0.846
+2022-07-20 22:53:55.279 | INFO     | aux.metrics.metrics:show:233 - Micro scores: Dice: 0.926 | IOU: 0.862
+2022-07-20 22:53:55.279 | INFO     | aux.metrics.metrics:show:228 - Evaluate non
+2022-07-20 22:53:55.280 | INFO     | aux.metrics.metrics:show:229 - Macro scores: Dice: 0.809 | IOU: 0.697
+2022-07-20 22:53:55.280 | INFO     | aux.metrics.metrics:show:233 - Micro scores: Dice: 0.823 | IOU: 0.699
+2022-07-20 22:56:05.013 | INFO     | tools.trainer:val_loop:201 - Valid | Epoch [026/026], with lr = 3.8327731807204733e-05, Step [0169],                    [val_loss: 0.0750]
+2022-07-20 22:56:05.109 | INFO     | aux.metrics.metrics:show:228 - Evaluate polyp
+2022-07-20 22:56:05.109 | INFO     | aux.metrics.metrics:show:229 - Macro scores: Dice: 0.926 | IOU: 0.865
+2022-07-20 22:56:05.109 | INFO     | aux.metrics.metrics:show:233 - Micro scores: Dice: 0.928 | IOU: 0.866
+2022-07-20 22:56:05.109 | INFO     | aux.metrics.metrics:show:228 - Evaluate neo
+2022-07-20 22:56:05.110 | INFO     | aux.metrics.metrics:show:229 - Macro scores: Dice: 0.913 | IOU: 0.852
+2022-07-20 22:56:05.110 | INFO     | aux.metrics.metrics:show:233 - Micro scores: Dice: 0.936 | IOU: 0.879
+2022-07-20 22:56:05.110 | INFO     | aux.metrics.metrics:show:228 - Evaluate non
+2022-07-20 22:56:05.110 | INFO     | aux.metrics.metrics:show:229 - Macro scores: Dice: 0.823 | IOU: 0.714
+2022-07-20 22:56:05.110 | INFO     | aux.metrics.metrics:show:233 - Micro scores: Dice: 0.843 | IOU: 0.729
+2022-07-20 22:56:05.591 | INFO     | tools.trainer:train_loop:113 - [Saving Snapshot:]/home/s/hungpv/polyps/checkpoints/neo_large_v6/MiT-B3-UPerHead_best.pth

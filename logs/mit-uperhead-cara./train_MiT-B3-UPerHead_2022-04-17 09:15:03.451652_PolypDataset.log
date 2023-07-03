@@ -1,0 +1,99 @@
+2022-04-17 09:15:03.454 | INFO     | __main__:main:46 - Load config from configs/mit-uperhead-cara.yaml
+2022-04-17 09:15:03.454 | INFO     | __main__:main:47 - {'dataset': {'data_path': '/home/admin_mcn/hungpv/polyps/dataset/KCECE', 'train_data_path': ['/home/admin_mcn/hungpv/polyps/dataset/KCECE/TrainDataset'], 'test_data_path': ['/home/admin_mcn/hungpv/polyps/dataset/KCECE/TestDataset/Kvasir'], 'val_data_path': ['/home/admin_mcn/hungpv/polyps/dataset/KCECE/TestDataset/CVC-300']}, 'model': {'num_classes': 1, 'save_dir': '/mnt/data/hungpv/polyps/checkpoint/KCECE/mit-uperhead-cara_v7', 'backbone': 'MiT-B3', 'head': 'UPerHead', 'pretrained': '/mnt/data/hungpv/polyps/pretrained-backbone/mit_b3.pth'}, 'optimizer': {'name': 'adam', 'lr': 0.0001, 'clip': 0.5, 'scheduler': 'cosine_warmup', 'loss': 'structure_loss'}, 'dev': 'cuda', 'train': {'start_from': 0, 'save_from': 78, 'num_epochs': 80, 'num_warmup_epoch': 10, 'is_val': False, 'size_rates': [0.75, 1, 1.25], 'multi_loss': True, 'dataloader': {'batchsize': 12, 'img_size': 352, 'shuffle': True, 'num_workers': 4, 'pin_memory': True, 'drop_last': True}, 'amp': False, 'ddp': False, 'augment': {'prob': 1, 'Flip_prob': 0.7, 'HueSaturationValue_prob': 0.7, 'RandomBrightnessContrast_prob': 0.5, 'crop_prob': 0.0, 'randomrotate90_prob': 0.7}}, 'test': {'dev': 'cuda', 'visualize': False, 'visualize_dir': '/mnt/data/hungpv/polyps/visualize', 'vis_x': 180, 'vis_overwrite': False, 'checkpoint_dir': '/mnt/data/hungpv/polyps/checkpoint/KCECE/mit-uperhead-cara_v7/MiT-B3-UPerHead_80.pth', 'dataloader': {'batchsize': 1, 'img_size': 352, 'shuffle': True, 'num_workers': 2, 'pin_memory': True, 'drop_last': True}, 'augment': {'prob': 1, 'Flip_prob': 0, 'HueSaturationValue_prob': 0, 'RandomBrightnessContrast_prob': 0, 'crop_prob': 0, 'randomrotate90_prob': 0, 'elastictransform_prob': 0, 'gridistortion_prob': 0, 'opticaldistortion_prob': 0, 'verticalflip_prob': 0, 'horizontalflip_prob': 0, 'randomgamma_prob': 0, 'CoarseDropout_prob': 0, 'RGBShift_prob': 0, 'MotionBlur_prob': 0, 'MedianBlur_prob': 0, 'GaussianBlur_prob': 0, 'GaussNoise_prob': 0, 'ChannelShuffle_prob': 0}}}
+2022-04-17 09:15:03.454 | INFO     | __main__:main:48 - Getting datapath
+2022-04-17 09:15:03.465 | INFO     | __main__:main:62 - There are 1450 images to train
+2022-04-17 09:15:03.466 | INFO     | __main__:main:81 - Train model with no valid dataset
+2022-04-17 09:15:03.466 | INFO     | __main__:main:83 - Loading data
+2022-04-17 09:15:03.555 | INFO     | __main__:main:97 - 120 batches to train
+2022-04-17 09:15:03.560 | INFO     | __main__:main:110 - Loading model
+2022-04-17 09:15:03.560 | INFO     | __main__:main:127 - Loading checkpoint from /mnt/data/hungpv/polyps/pretrained-backbone/mit_b3.pth ...
+2022-04-17 09:15:07.510 | INFO     | __main__:main:163 - Use deep supervision for training
+2022-04-17 09:15:07.510 | INFO     | __main__:main:167 - Training with FP32 ...
+2022-04-17 09:23:24.905 | INFO     | tools.trainer:train_loop:97 - Epoch: [1/ 80] | Train loss: [14.909444669882456]
+2022-04-17 09:31:41.845 | INFO     | tools.trainer:train_loop:97 - Epoch: [2/ 80] | Train loss: [4.995101694266001]
+2022-04-17 09:39:59.052 | INFO     | tools.trainer:train_loop:97 - Epoch: [3/ 80] | Train loss: [3.6013432989517846]
+2022-04-17 09:40:00.874 | INFO     | tools.trainer:train_loop:112 - [Saving Snapshot:]/mnt/data/hungpv/polyps/checkpoint/KCECE/mit-uperhead-cara_v7/MiT-B3-UPerHead_3.pth
+2022-04-17 09:48:18.441 | INFO     | tools.trainer:train_loop:97 - Epoch: [4/ 80] | Train loss: [2.743720696369807]
+2022-04-17 09:56:35.359 | INFO     | tools.trainer:train_loop:97 - Epoch: [5/ 80] | Train loss: [2.0294867138067882]
+2022-04-17 10:04:52.480 | INFO     | tools.trainer:train_loop:97 - Epoch: [6/ 80] | Train loss: [1.6277421196301778]
+2022-04-17 10:13:09.408 | INFO     | tools.trainer:train_loop:97 - Epoch: [7/ 80] | Train loss: [1.4164157658815384]
+2022-04-17 10:21:26.108 | INFO     | tools.trainer:train_loop:97 - Epoch: [8/ 80] | Train loss: [1.280302024881045]
+2022-04-17 10:29:42.979 | INFO     | tools.trainer:train_loop:97 - Epoch: [9/ 80] | Train loss: [1.2030813028415044]
+2022-04-17 10:37:59.295 | INFO     | tools.trainer:train_loop:97 - Epoch: [10/ 80] | Train loss: [1.139600000778834]
+2022-04-17 10:46:15.967 | INFO     | tools.trainer:train_loop:97 - Epoch: [11/ 80] | Train loss: [1.0760628193616868]
+2022-04-17 10:54:32.099 | INFO     | tools.trainer:train_loop:97 - Epoch: [12/ 80] | Train loss: [1.2163327475388845]
+2022-04-17 11:02:49.154 | INFO     | tools.trainer:train_loop:97 - Epoch: [13/ 80] | Train loss: [1.0043772314985593]
+2022-04-17 11:11:06.933 | INFO     | tools.trainer:train_loop:97 - Epoch: [14/ 80] | Train loss: [0.9237267528971036]
+2022-04-17 11:19:25.315 | INFO     | tools.trainer:train_loop:97 - Epoch: [15/ 80] | Train loss: [0.889555835723877]
+2022-04-17 11:27:43.865 | INFO     | tools.trainer:train_loop:97 - Epoch: [16/ 80] | Train loss: [0.8653320387005806]
+2022-04-17 11:36:01.976 | INFO     | tools.trainer:train_loop:97 - Epoch: [17/ 80] | Train loss: [0.8543073942263921]
+2022-04-17 11:44:19.394 | INFO     | tools.trainer:train_loop:97 - Epoch: [18/ 80] | Train loss: [0.8170047029852867]
+2022-04-17 11:52:36.678 | INFO     | tools.trainer:train_loop:97 - Epoch: [19/ 80] | Train loss: [0.7906372413039208]
+2022-04-17 12:00:53.598 | INFO     | tools.trainer:train_loop:97 - Epoch: [20/ 80] | Train loss: [0.8373537371555965]
+2022-04-17 12:09:10.462 | INFO     | tools.trainer:train_loop:97 - Epoch: [21/ 80] | Train loss: [1.1785449415445328]
+2022-04-17 12:17:27.349 | INFO     | tools.trainer:train_loop:97 - Epoch: [22/ 80] | Train loss: [0.9120195716619491]
+2022-04-17 12:25:44.176 | INFO     | tools.trainer:train_loop:97 - Epoch: [23/ 80] | Train loss: [0.7928587093949317]
+2022-04-17 12:34:00.982 | INFO     | tools.trainer:train_loop:97 - Epoch: [24/ 80] | Train loss: [0.7417589098215103]
+2022-04-17 12:42:17.908 | INFO     | tools.trainer:train_loop:97 - Epoch: [25/ 80] | Train loss: [0.7448274761438369]
+2022-04-17 12:50:34.782 | INFO     | tools.trainer:train_loop:97 - Epoch: [26/ 80] | Train loss: [0.7098175312081972]
+2022-04-17 12:58:52.654 | INFO     | tools.trainer:train_loop:97 - Epoch: [27/ 80] | Train loss: [0.7060142735640208]
+2022-04-17 13:07:10.804 | INFO     | tools.trainer:train_loop:97 - Epoch: [28/ 80] | Train loss: [0.6957187473773956]
+2022-04-17 13:15:28.988 | INFO     | tools.trainer:train_loop:97 - Epoch: [29/ 80] | Train loss: [0.6915724083781243]
+2022-04-17 13:23:46.429 | INFO     | tools.trainer:train_loop:97 - Epoch: [30/ 80] | Train loss: [0.6867901307841142]
+2022-04-17 13:23:47.117 | INFO     | tools.trainer:train_loop:112 - [Saving Snapshot:]/mnt/data/hungpv/polyps/checkpoint/KCECE/mit-uperhead-cara_v7/MiT-B3-UPerHead_30.pth
+2022-04-17 13:32:04.669 | INFO     | tools.trainer:train_loop:97 - Epoch: [31/ 80] | Train loss: [0.6831556255618731]
+2022-04-17 13:40:21.721 | INFO     | tools.trainer:train_loop:97 - Epoch: [32/ 80] | Train loss: [0.6497729912400245]
+2022-04-17 13:48:38.322 | INFO     | tools.trainer:train_loop:97 - Epoch: [33/ 80] | Train loss: [0.6818747599919637]
+2022-04-17 13:56:55.294 | INFO     | tools.trainer:train_loop:97 - Epoch: [34/ 80] | Train loss: [0.6546385248502096]
+2022-04-17 14:05:12.363 | INFO     | tools.trainer:train_loop:97 - Epoch: [35/ 80] | Train loss: [0.6649551714460055]
+2022-04-17 14:13:29.095 | INFO     | tools.trainer:train_loop:97 - Epoch: [36/ 80] | Train loss: [0.6386881239712239]
+2022-04-17 14:21:45.730 | INFO     | tools.trainer:train_loop:97 - Epoch: [37/ 80] | Train loss: [0.6255809850990772]
+2022-04-17 14:30:03.462 | INFO     | tools.trainer:train_loop:97 - Epoch: [38/ 80] | Train loss: [0.6077373258769512]
+2022-04-17 14:38:21.553 | INFO     | tools.trainer:train_loop:97 - Epoch: [39/ 80] | Train loss: [0.6002996730307738]
+2022-04-17 14:46:39.944 | INFO     | tools.trainer:train_loop:97 - Epoch: [40/ 80] | Train loss: [0.6030898024638494]
+2022-04-17 14:46:40.640 | INFO     | tools.trainer:train_loop:112 - [Saving Snapshot:]/mnt/data/hungpv/polyps/checkpoint/KCECE/mit-uperhead-cara_v7/MiT-B3-UPerHead_40.pth
+2022-04-17 14:54:58.294 | INFO     | tools.trainer:train_loop:97 - Epoch: [41/ 80] | Train loss: [0.6051876152555148]
+2022-04-17 15:03:15.500 | INFO     | tools.trainer:train_loop:97 - Epoch: [42/ 80] | Train loss: [0.5960460141301155]
+2022-04-17 15:11:32.419 | INFO     | tools.trainer:train_loop:97 - Epoch: [43/ 80] | Train loss: [0.572241659462452]
+2022-04-17 15:19:49.346 | INFO     | tools.trainer:train_loop:97 - Epoch: [44/ 80] | Train loss: [0.5487336064378421]
+2022-04-17 15:28:06.199 | INFO     | tools.trainer:train_loop:97 - Epoch: [45/ 80] | Train loss: [0.5452194924155871]
+2022-04-17 15:36:23.853 | INFO     | tools.trainer:train_loop:97 - Epoch: [46/ 80] | Train loss: [0.5393207430839538]
+2022-04-17 15:44:42.023 | INFO     | tools.trainer:train_loop:97 - Epoch: [47/ 80] | Train loss: [0.5553239432473978]
+2022-04-17 15:53:00.351 | INFO     | tools.trainer:train_loop:97 - Epoch: [48/ 80] | Train loss: [0.5395031034946441]
+2022-04-17 16:01:18.015 | INFO     | tools.trainer:train_loop:97 - Epoch: [49/ 80] | Train loss: [0.539656279484431]
+2022-04-17 16:09:35.379 | INFO     | tools.trainer:train_loop:97 - Epoch: [50/ 80] | Train loss: [0.5219086480637392]
+2022-04-17 16:09:36.073 | INFO     | tools.trainer:train_loop:112 - [Saving Snapshot:]/mnt/data/hungpv/polyps/checkpoint/KCECE/mit-uperhead-cara_v7/MiT-B3-UPerHead_50.pth
+2022-04-17 16:17:53.075 | INFO     | tools.trainer:train_loop:97 - Epoch: [51/ 80] | Train loss: [0.5165683649480343]
+2022-04-17 16:26:10.642 | INFO     | tools.trainer:train_loop:97 - Epoch: [52/ 80] | Train loss: [0.5167380914092063]
+2022-04-17 16:34:28.040 | INFO     | tools.trainer:train_loop:97 - Epoch: [53/ 80] | Train loss: [0.5005628536144893]
+2022-04-17 16:42:45.517 | INFO     | tools.trainer:train_loop:97 - Epoch: [54/ 80] | Train loss: [0.509413842856884]
+2022-04-17 16:51:02.986 | INFO     | tools.trainer:train_loop:97 - Epoch: [55/ 80] | Train loss: [0.49126967613895733]
+2022-04-17 16:59:20.772 | INFO     | tools.trainer:train_loop:97 - Epoch: [56/ 80] | Train loss: [0.4804734617471695]
+2022-04-17 17:07:37.683 | INFO     | tools.trainer:train_loop:97 - Epoch: [57/ 80] | Train loss: [0.4725367491443952]
+2022-04-17 17:15:55.082 | INFO     | tools.trainer:train_loop:97 - Epoch: [58/ 80] | Train loss: [0.47001215666532514]
+2022-04-17 17:24:13.025 | INFO     | tools.trainer:train_loop:97 - Epoch: [59/ 80] | Train loss: [0.46862447783350947]
+2022-04-17 17:32:31.387 | INFO     | tools.trainer:train_loop:97 - Epoch: [60/ 80] | Train loss: [0.457171144336462]
+2022-04-17 17:32:32.060 | INFO     | tools.trainer:train_loop:112 - [Saving Snapshot:]/mnt/data/hungpv/polyps/checkpoint/KCECE/mit-uperhead-cara_v7/MiT-B3-UPerHead_60.pth
+2022-04-17 17:40:50.044 | INFO     | tools.trainer:train_loop:97 - Epoch: [61/ 80] | Train loss: [0.4535713315010071]
+2022-04-17 17:49:08.009 | INFO     | tools.trainer:train_loop:97 - Epoch: [62/ 80] | Train loss: [0.45049698452154796]
+2022-04-17 17:57:25.652 | INFO     | tools.trainer:train_loop:97 - Epoch: [63/ 80] | Train loss: [0.45107623462875684]
+2022-04-17 18:05:42.169 | INFO     | tools.trainer:train_loop:97 - Epoch: [64/ 80] | Train loss: [0.43556324814756714]
+2022-04-17 18:13:59.666 | INFO     | tools.trainer:train_loop:97 - Epoch: [65/ 80] | Train loss: [0.4427635503311952]
+2022-04-17 18:22:17.831 | INFO     | tools.trainer:train_loop:97 - Epoch: [66/ 80] | Train loss: [0.4377303237716357]
+2022-04-17 18:30:35.804 | INFO     | tools.trainer:train_loop:97 - Epoch: [67/ 80] | Train loss: [0.4309009338418643]
+2022-04-17 18:38:54.240 | INFO     | tools.trainer:train_loop:97 - Epoch: [68/ 80] | Train loss: [0.4266968677441279]
+2022-04-17 18:47:12.500 | INFO     | tools.trainer:train_loop:97 - Epoch: [69/ 80] | Train loss: [0.4226132897039255]
+2022-04-17 18:55:29.854 | INFO     | tools.trainer:train_loop:97 - Epoch: [70/ 80] | Train loss: [0.41673431918025017]
+2022-04-17 19:03:47.384 | INFO     | tools.trainer:train_loop:97 - Epoch: [71/ 80] | Train loss: [0.414987088739872]
+2022-04-17 19:12:05.082 | INFO     | tools.trainer:train_loop:97 - Epoch: [72/ 80] | Train loss: [0.41154155458013214]
+2022-04-17 19:20:23.193 | INFO     | tools.trainer:train_loop:97 - Epoch: [73/ 80] | Train loss: [0.4081131361424923]
+2022-04-17 19:28:41.274 | INFO     | tools.trainer:train_loop:97 - Epoch: [74/ 80] | Train loss: [0.40402775928378104]
+2022-04-17 19:36:59.643 | INFO     | tools.trainer:train_loop:97 - Epoch: [75/ 80] | Train loss: [0.40726553996404014]
+2022-04-17 19:45:17.745 | INFO     | tools.trainer:train_loop:97 - Epoch: [76/ 80] | Train loss: [0.39634691501657165]
+2022-04-17 19:53:35.997 | INFO     | tools.trainer:train_loop:97 - Epoch: [77/ 80] | Train loss: [0.3948306334515413]
+2022-04-17 20:01:53.540 | INFO     | tools.trainer:train_loop:97 - Epoch: [78/ 80] | Train loss: [0.39655992115537325]
+2022-04-17 20:10:11.147 | INFO     | tools.trainer:train_loop:97 - Epoch: [79/ 80] | Train loss: [0.39107797195514044]
+2022-04-17 20:10:11.838 | INFO     | tools.trainer:train_loop:112 - [Saving Snapshot:]/mnt/data/hungpv/polyps/checkpoint/KCECE/mit-uperhead-cara_v7/MiT-B3-UPerHead_79.pth
+2022-04-17 20:18:29.771 | INFO     | tools.trainer:train_loop:97 - Epoch: [80/ 80] | Train loss: [0.39180165603756906]
+2022-04-17 20:18:30.458 | INFO     | tools.trainer:train_loop:112 - [Saving Snapshot:]/mnt/data/hungpv/polyps/checkpoint/KCECE/mit-uperhead-cara_v7/MiT-B3-UPerHead_80.pth
+2022-04-17 20:18:30.458 | INFO     | tools.trainer:train_loop:118 - Training cost: 39801.72065632098seconds

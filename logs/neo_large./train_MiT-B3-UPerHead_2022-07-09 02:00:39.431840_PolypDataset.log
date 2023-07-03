@@ -1,0 +1,133 @@
+2022-07-09 02:00:39.435 | INFO     | __main__:main:57 - Load config from configs/neo_large.yaml
+2022-07-09 02:00:39.435 | INFO     | __main__:main:58 - {'dataset': {'data_path': '/home/s/WLIv5_pub_noud', 'train_data_path': ['/home/s/WLIv5_pub_noud/Train'], 'test_data_path': ['/home/s/WLIv5_pub_noud/Test'], 'val_data_path': ['/home/s/WLIv5_pub_noud/Test']}, 'model': {'num_classes': 3, 'save_dir': '/home/s/hungpv/polyps/checkpoints/neo_large_v1', 'backbone': 'MiT-B3', 'head': 'UPerHead', 'pretrained': '/home/s/hungpv/polyps/pretrained_models/mit_b3.pth'}, 'optimizer': {'name': 'adam', 'lr': 0.0001, 'clip': 0.5, 'scheduler': 'cosine_warmup', 'loss': 'DiceLoss'}, 'dev': 'cuda', 'train': {'start_from': 0, 'save_from': 59, 'num_epochs': 60, 'num_warmup_epoch': 4, 'is_val': True, 'size_rates': [0.75, 1, 1.25], 'dataloader': {'batchsize': 16, 'img_size': 352, 'shuffle': True, 'num_workers': 4, 'pin_memory': True, 'drop_last': True}, 'amp': False, 'ddp': False, 'augment': {'prob': 1, 'Flip_prob': 0.5, 'HueSaturationValue_prob': 0.5, 'RandomBrightnessContrast_prob': 0.5, 'randomrotate90_prob': 0.5}}, 'val': {'dataloader': {'batchsize': 16, 'img_size': 352, 'shuffle': True, 'num_workers': 4, 'pin_memory': True, 'drop_last': True}}, 'test': {'dev': 'cuda', 'visualize': False, 'visualize_dir': '/mnt/data/hungpv/polyps/visualize', 'vis_x': 180, 'vis_overwrite': False, 'checkpoint_dir': '/home/s/hungpv/polyps/checkpoints/neo_large_v1/MiT-B3-UPerHead_3.pth', 'dataloader': {'batchsize': 1, 'img_size': 352, 'shuffle': True, 'num_workers': 2, 'pin_memory': True, 'drop_last': True}, 'augment': {'prob': 1, 'Flip_prob': 0, 'HueSaturationValue_prob': 0, 'RandomBrightnessContrast_prob': 0, 'crop_prob': 0, 'randomrotate90_prob': 0, 'elastictransform_prob': 0, 'gridistortion_prob': 0, 'opticaldistortion_prob': 0, 'verticalflip_prob': 0, 'horizontalflip_prob': 0, 'randomgamma_prob': 0, 'CoarseDropout_prob': 0, 'RGBShift_prob': 0, 'MotionBlur_prob': 0, 'MedianBlur_prob': 0, 'GaussianBlur_prob': 0, 'GaussNoise_prob': 0, 'ChannelShuffle_prob': 0}}}
+2022-07-09 02:00:39.436 | INFO     | __main__:main:59 - Getting datapath
+2022-07-09 02:00:39.463 | INFO     | __main__:main:74 - There are 5277 images to train
+2022-07-09 02:00:39.469 | INFO     | __main__:main:91 - There are 1353 images to val
+2022-07-09 02:00:39.469 | INFO     | __main__:main:95 - Loading data
+2022-07-09 02:00:40.288 | INFO     | __main__:main:109 - 329 batches to train
+2022-07-09 02:00:40.495 | INFO     | __main__:main:122 - Loading model
+2022-07-09 02:00:40.495 | INFO     | __main__:main:143 - Loading checkpoint from /home/s/hungpv/polyps/pretrained_models/mit_b3.pth ...
+2022-07-09 02:00:43.718 | INFO     | __main__:main:186 - Training with FP32 ...
+2022-07-09 02:07:34.002 | INFO     | tools.trainer:val_loop:179 - Valid | Epoch [000/000], with lr = 1.25e-05, Step [0083],                    [val_loss: 0.4567]
+2022-07-09 02:07:34.238 | INFO     | tools.trainer:val_loop:205 - Macro scores: Dice all: 0.485 | IOU all: 0.322 | Dice neo: 0.416 | IOU neo: 0.267 | Dice non: 0.034 | IOU non: 0.018
+2022-07-09 02:14:23.628 | INFO     | tools.trainer:val_loop:179 - Valid | Epoch [001/001], with lr = 1.25e-05, Step [0083],                    [val_loss: 0.3444]
+2022-07-09 02:14:23.864 | INFO     | tools.trainer:val_loop:205 - Macro scores: Dice all: 0.650 | IOU all: 0.485 | Dice neo: 0.610 | IOU neo: 0.447 | Dice non: 0.149 | IOU non: 0.083
+2022-07-09 02:21:12.599 | INFO     | tools.trainer:val_loop:179 - Valid | Epoch [002/002], with lr = 3.4375e-05, Step [0083],                    [val_loss: 0.3030]
+2022-07-09 02:21:12.830 | INFO     | tools.trainer:val_loop:205 - Macro scores: Dice all: 0.728 | IOU all: 0.581 | Dice neo: 0.712 | IOU neo: 0.565 | Dice non: 0.446 | IOU non: 0.296
+2022-07-09 02:21:13.305 | INFO     | tools.trainer:train_loop:115 - [Saving Snapshot:]/home/s/hungpv/polyps/checkpoints/neo_large_v1/MiT-B3-UPerHead_3.pth
+2022-07-09 02:28:03.372 | INFO     | tools.trainer:val_loop:179 - Valid | Epoch [003/003], with lr = 5.6250000000000005e-05, Step [0083],                    [val_loss: 0.2600]
+2022-07-09 02:28:03.599 | INFO     | tools.trainer:val_loop:205 - Macro scores: Dice all: 0.785 | IOU all: 0.653 | Dice neo: 0.764 | IOU neo: 0.632 | Dice non: 0.444 | IOU non: 0.295
+2022-07-09 02:34:51.466 | INFO     | tools.trainer:val_loop:179 - Valid | Epoch [004/004], with lr = 7.8125e-05, Step [0083],                    [val_loss: 0.3475]
+2022-07-09 02:34:51.703 | INFO     | tools.trainer:val_loop:205 - Macro scores: Dice all: 0.649 | IOU all: 0.486 | Dice neo: 0.614 | IOU neo: 0.453 | Dice non: 0.257 | IOU non: 0.153
+2022-07-09 02:41:39.894 | INFO     | tools.trainer:val_loop:179 - Valid | Epoch [005/005], with lr = 0.0001, Step [0083],                    [val_loss: 0.2273]
+2022-07-09 02:41:40.117 | INFO     | tools.trainer:val_loop:205 - Macro scores: Dice all: 0.842 | IOU all: 0.734 | Dice neo: 0.807 | IOU neo: 0.687 | Dice non: 0.480 | IOU non: 0.332
+2022-07-09 02:48:28.304 | INFO     | tools.trainer:val_loop:179 - Valid | Epoch [006/006], with lr = 0.0001, Step [0083],                    [val_loss: 0.3021]
+2022-07-09 02:48:28.537 | INFO     | tools.trainer:val_loop:205 - Macro scores: Dice all: 0.776 | IOU all: 0.645 | Dice neo: 0.661 | IOU neo: 0.522 | Dice non: 0.474 | IOU non: 0.320
+2022-07-09 02:55:17.554 | INFO     | tools.trainer:val_loop:179 - Valid | Epoch [007/007], with lr = 9.972609476841367e-05, Step [0083],                    [val_loss: 0.3340]
+2022-07-09 02:55:17.780 | INFO     | tools.trainer:val_loop:205 - Macro scores: Dice all: 0.750 | IOU all: 0.609 | Dice neo: 0.722 | IOU neo: 0.575 | Dice non: 0.227 | IOU non: 0.136
+2022-07-09 03:02:07.154 | INFO     | tools.trainer:val_loop:179 - Valid | Epoch [008/008], with lr = 9.938441702975689e-05, Step [0083],                    [val_loss: 0.2392]
+2022-07-09 03:02:07.382 | INFO     | tools.trainer:val_loop:205 - Macro scores: Dice all: 0.846 | IOU all: 0.740 | Dice neo: 0.798 | IOU neo: 0.678 | Dice non: 0.503 | IOU non: 0.355
+2022-07-09 03:08:56.348 | INFO     | tools.trainer:val_loop:179 - Valid | Epoch [009/009], with lr = 9.890738003669029e-05, Step [0083],                    [val_loss: 0.2082]
+2022-07-09 03:08:56.585 | INFO     | tools.trainer:val_loop:205 - Macro scores: Dice all: 0.820 | IOU all: 0.705 | Dice neo: 0.791 | IOU neo: 0.669 | Dice non: 0.560 | IOU non: 0.407
+2022-07-09 03:15:45.151 | INFO     | tools.trainer:val_loop:179 - Valid | Epoch [010/010], with lr = 9.829629131445342e-05, Step [0083],                    [val_loss: 0.2222]
+2022-07-09 03:15:45.381 | INFO     | tools.trainer:val_loop:205 - Macro scores: Dice all: 0.820 | IOU all: 0.705 | Dice neo: 0.786 | IOU neo: 0.659 | Dice non: 0.497 | IOU non: 0.356
+2022-07-09 03:22:34.339 | INFO     | tools.trainer:val_loop:179 - Valid | Epoch [011/011], with lr = 9.755282581475769e-05, Step [0083],                    [val_loss: 0.2351]
+2022-07-09 03:22:34.555 | INFO     | tools.trainer:val_loop:205 - Macro scores: Dice all: 0.832 | IOU all: 0.721 | Dice neo: 0.805 | IOU neo: 0.684 | Dice non: 0.471 | IOU non: 0.321
+2022-07-09 03:29:23.356 | INFO     | tools.trainer:val_loop:179 - Valid | Epoch [012/012], with lr = 9.667902132486009e-05, Step [0083],                    [val_loss: 0.1918]
+2022-07-09 03:29:23.588 | INFO     | tools.trainer:val_loop:205 - Macro scores: Dice all: 0.842 | IOU all: 0.737 | Dice neo: 0.817 | IOU neo: 0.703 | Dice non: 0.567 | IOU non: 0.415
+2022-07-09 03:36:13.100 | INFO     | tools.trainer:val_loop:179 - Valid | Epoch [013/013], with lr = 9.567727288213005e-05, Step [0083],                    [val_loss: 0.2294]
+2022-07-09 03:36:13.323 | INFO     | tools.trainer:val_loop:205 - Macro scores: Dice all: 0.848 | IOU all: 0.745 | Dice neo: 0.804 | IOU neo: 0.682 | Dice non: 0.460 | IOU non: 0.320
+2022-07-09 03:43:01.818 | INFO     | tools.trainer:val_loop:179 - Valid | Epoch [014/014], with lr = 9.45503262094184e-05, Step [0083],                    [val_loss: 0.2243]
+2022-07-09 03:43:02.058 | INFO     | tools.trainer:val_loop:205 - Macro scores: Dice all: 0.833 | IOU all: 0.724 | Dice neo: 0.804 | IOU neo: 0.684 | Dice non: 0.571 | IOU non: 0.423
+2022-07-09 03:49:50.809 | INFO     | tools.trainer:val_loop:179 - Valid | Epoch [015/015], with lr = 9.330127018922194e-05, Step [0083],                    [val_loss: 0.2478]
+2022-07-09 03:49:51.041 | INFO     | tools.trainer:val_loop:205 - Macro scores: Dice all: 0.789 | IOU all: 0.660 | Dice neo: 0.767 | IOU neo: 0.634 | Dice non: 0.522 | IOU non: 0.371
+2022-07-09 03:56:40.013 | INFO     | tools.trainer:val_loop:179 - Valid | Epoch [016/016], with lr = 9.193352839727121e-05, Step [0083],                    [val_loss: 0.2285]
+2022-07-09 03:56:40.240 | INFO     | tools.trainer:val_loop:205 - Macro scores: Dice all: 0.823 | IOU all: 0.709 | Dice neo: 0.782 | IOU neo: 0.659 | Dice non: 0.548 | IOU non: 0.394
+2022-07-09 04:03:29.274 | INFO     | tools.trainer:val_loop:179 - Valid | Epoch [017/017], with lr = 9.045084971874738e-05, Step [0083],                    [val_loss: 0.2037]
+2022-07-09 04:03:29.495 | INFO     | tools.trainer:val_loop:205 - Macro scores: Dice all: 0.839 | IOU all: 0.734 | Dice neo: 0.818 | IOU neo: 0.703 | Dice non: 0.548 | IOU non: 0.398
+2022-07-09 04:10:18.198 | INFO     | tools.trainer:val_loop:179 - Valid | Epoch [018/018], with lr = 8.885729807284856e-05, Step [0083],                    [val_loss: 0.1934]
+2022-07-09 04:10:18.419 | INFO     | tools.trainer:val_loop:205 - Macro scores: Dice all: 0.854 | IOU all: 0.757 | Dice neo: 0.830 | IOU neo: 0.722 | Dice non: 0.576 | IOU non: 0.430
+2022-07-09 04:17:07.142 | INFO     | tools.trainer:val_loop:179 - Valid | Epoch [019/019], with lr = 8.715724127386972e-05, Step [0083],                    [val_loss: 0.2080]
+2022-07-09 04:17:07.382 | INFO     | tools.trainer:val_loop:205 - Macro scores: Dice all: 0.859 | IOU all: 0.762 | Dice neo: 0.832 | IOU neo: 0.724 | Dice non: 0.560 | IOU non: 0.411
+2022-07-09 04:23:56.331 | INFO     | tools.trainer:val_loop:179 - Valid | Epoch [020/020], with lr = 8.535533905932738e-05, Step [0083],                    [val_loss: 0.2909]
+2022-07-09 04:23:56.562 | INFO     | tools.trainer:val_loop:205 - Macro scores: Dice all: 0.831 | IOU all: 0.721 | Dice neo: 0.769 | IOU neo: 0.638 | Dice non: 0.366 | IOU non: 0.238
+2022-07-09 04:30:45.731 | INFO     | tools.trainer:val_loop:179 - Valid | Epoch [021/021], with lr = 8.345653031794292e-05, Step [0083],                    [val_loss: 0.2486]
+2022-07-09 04:30:45.968 | INFO     | tools.trainer:val_loop:205 - Macro scores: Dice all: 0.831 | IOU all: 0.724 | Dice neo: 0.810 | IOU neo: 0.693 | Dice non: 0.430 | IOU non: 0.291
+2022-07-09 04:37:35.249 | INFO     | tools.trainer:val_loop:179 - Valid | Epoch [022/022], with lr = 8.146601955249188e-05, Step [0083],                    [val_loss: 0.2161]
+2022-07-09 04:37:35.475 | INFO     | tools.trainer:val_loop:205 - Macro scores: Dice all: 0.854 | IOU all: 0.756 | Dice neo: 0.818 | IOU neo: 0.709 | Dice non: 0.538 | IOU non: 0.391
+2022-07-09 04:44:24.061 | INFO     | tools.trainer:val_loop:179 - Valid | Epoch [023/023], with lr = 7.938926261462366e-05, Step [0083],                    [val_loss: 0.2784]
+2022-07-09 04:44:24.291 | INFO     | tools.trainer:val_loop:205 - Macro scores: Dice all: 0.855 | IOU all: 0.756 | Dice neo: 0.798 | IOU neo: 0.673 | Dice non: 0.321 | IOU non: 0.204
+2022-07-09 04:51:12.569 | INFO     | tools.trainer:val_loop:179 - Valid | Epoch [024/024], with lr = 7.723195175075136e-05, Step [0083],                    [val_loss: 0.2107]
+2022-07-09 04:51:12.795 | INFO     | tools.trainer:val_loop:205 - Macro scores: Dice all: 0.853 | IOU all: 0.753 | Dice neo: 0.828 | IOU neo: 0.719 | Dice non: 0.540 | IOU non: 0.392
+2022-07-09 04:58:01.726 | INFO     | tools.trainer:val_loop:179 - Valid | Epoch [025/025], with lr = 7.500000000000001e-05, Step [0083],                    [val_loss: 0.1811]
+2022-07-09 04:58:01.944 | INFO     | tools.trainer:val_loop:205 - Macro scores: Dice all: 0.874 | IOU all: 0.788 | Dice neo: 0.839 | IOU neo: 0.733 | Dice non: 0.577 | IOU non: 0.429
+2022-07-09 05:04:50.638 | INFO     | tools.trainer:val_loop:179 - Valid | Epoch [026/026], with lr = 7.269952498697734e-05, Step [0083],                    [val_loss: 0.2271]
+2022-07-09 05:04:50.879 | INFO     | tools.trainer:val_loop:205 - Macro scores: Dice all: 0.858 | IOU all: 0.762 | Dice neo: 0.819 | IOU neo: 0.703 | Dice non: 0.504 | IOU non: 0.362
+2022-07-09 05:11:40.056 | INFO     | tools.trainer:val_loop:179 - Valid | Epoch [027/027], with lr = 7.033683215379002e-05, Step [0083],                    [val_loss: 0.2473]
+2022-07-09 05:11:40.276 | INFO     | tools.trainer:val_loop:205 - Macro scores: Dice all: 0.872 | IOU all: 0.784 | Dice neo: 0.806 | IOU neo: 0.687 | Dice non: 0.426 | IOU non: 0.290
+2022-07-09 05:18:28.774 | INFO     | tools.trainer:val_loop:179 - Valid | Epoch [028/028], with lr = 6.791839747726503e-05, Step [0083],                    [val_loss: 0.1720]
+2022-07-09 05:18:28.998 | INFO     | tools.trainer:val_loop:205 - Macro scores: Dice all: 0.879 | IOU all: 0.793 | Dice neo: 0.854 | IOU neo: 0.756 | Dice non: 0.618 | IOU non: 0.472
+2022-07-09 05:25:17.589 | INFO     | tools.trainer:val_loop:179 - Valid | Epoch [029/029], with lr = 6.545084971874738e-05, Step [0083],                    [val_loss: 0.2407]
+2022-07-09 05:25:17.821 | INFO     | tools.trainer:val_loop:205 - Macro scores: Dice all: 0.867 | IOU all: 0.776 | Dice neo: 0.820 | IOU neo: 0.707 | Dice non: 0.478 | IOU non: 0.344
+2022-07-09 05:32:07.077 | INFO     | tools.trainer:val_loop:179 - Valid | Epoch [030/030], with lr = 6.294095225512603e-05, Step [0083],                    [val_loss: 0.2196]
+2022-07-09 05:32:07.298 | INFO     | tools.trainer:val_loop:205 - Macro scores: Dice all: 0.877 | IOU all: 0.792 | Dice neo: 0.823 | IOU neo: 0.712 | Dice non: 0.488 | IOU non: 0.343
+2022-07-09 05:38:55.846 | INFO     | tools.trainer:val_loop:179 - Valid | Epoch [031/031], with lr = 6.0395584540887963e-05, Step [0083],                    [val_loss: 0.3949]
+2022-07-09 05:38:56.076 | INFO     | tools.trainer:val_loop:205 - Macro scores: Dice all: 0.835 | IOU all: 0.726 | Dice neo: 0.738 | IOU neo: 0.598 | Dice non: 0.079 | IOU non: 0.045
+2022-07-09 05:45:44.182 | INFO     | tools.trainer:val_loop:179 - Valid | Epoch [032/032], with lr = 5.782172325201155e-05, Step [0083],                    [val_loss: 0.1745]
+2022-07-09 05:45:44.405 | INFO     | tools.trainer:val_loop:205 - Macro scores: Dice all: 0.882 | IOU all: 0.796 | Dice neo: 0.852 | IOU neo: 0.752 | Dice non: 0.629 | IOU non: 0.481
+2022-07-09 05:52:32.926 | INFO     | tools.trainer:val_loop:179 - Valid | Epoch [033/033], with lr = 5.522642316338268e-05, Step [0083],                    [val_loss: 0.1683]
+2022-07-09 05:52:33.158 | INFO     | tools.trainer:val_loop:205 - Macro scores: Dice all: 0.877 | IOU all: 0.790 | Dice neo: 0.856 | IOU neo: 0.761 | Dice non: 0.613 | IOU non: 0.469
+2022-07-09 05:59:21.603 | INFO     | tools.trainer:val_loop:179 - Valid | Epoch [034/034], with lr = 5.261679781214719e-05, Step [0083],                    [val_loss: 0.1744]
+2022-07-09 05:59:21.839 | INFO     | tools.trainer:val_loop:205 - Macro scores: Dice all: 0.885 | IOU all: 0.803 | Dice neo: 0.844 | IOU neo: 0.744 | Dice non: 0.638 | IOU non: 0.494
+2022-07-09 06:06:11.267 | INFO     | tools.trainer:val_loop:179 - Valid | Epoch [035/035], with lr = 5.0000000000000016e-05, Step [0083],                    [val_loss: 0.2010]
+2022-07-09 06:06:11.499 | INFO     | tools.trainer:val_loop:205 - Macro scores: Dice all: 0.886 | IOU all: 0.805 | Dice neo: 0.834 | IOU neo: 0.728 | Dice non: 0.513 | IOU non: 0.375
+2022-07-09 06:13:00.067 | INFO     | tools.trainer:val_loop:179 - Valid | Epoch [036/036], with lr = 4.738320218785282e-05, Step [0083],                    [val_loss: 0.1764]
+2022-07-09 06:13:00.284 | INFO     | tools.trainer:val_loop:205 - Macro scores: Dice all: 0.883 | IOU all: 0.801 | Dice neo: 0.851 | IOU neo: 0.751 | Dice non: 0.596 | IOU non: 0.448
+2022-07-09 06:19:49.765 | INFO     | tools.trainer:val_loop:179 - Valid | Epoch [037/037], with lr = 4.477357683661734e-05, Step [0083],                    [val_loss: 0.2190]
+2022-07-09 06:19:49.998 | INFO     | tools.trainer:val_loop:205 - Macro scores: Dice all: 0.886 | IOU all: 0.803 | Dice neo: 0.828 | IOU neo: 0.718 | Dice non: 0.505 | IOU non: 0.361
+2022-07-09 06:26:38.994 | INFO     | tools.trainer:val_loop:179 - Valid | Epoch [038/038], with lr = 4.217827674798846e-05, Step [0083],                    [val_loss: 0.2116]
+2022-07-09 06:26:39.211 | INFO     | tools.trainer:val_loop:205 - Macro scores: Dice all: 0.883 | IOU all: 0.802 | Dice neo: 0.839 | IOU neo: 0.735 | Dice non: 0.555 | IOU non: 0.411
+2022-07-09 06:33:27.578 | INFO     | tools.trainer:val_loop:179 - Valid | Epoch [039/039], with lr = 3.9604415459112035e-05, Step [0083],                    [val_loss: 0.2191]
+2022-07-09 06:33:27.810 | INFO     | tools.trainer:val_loop:205 - Macro scores: Dice all: 0.886 | IOU all: 0.804 | Dice neo: 0.834 | IOU neo: 0.729 | Dice non: 0.499 | IOU non: 0.357
+2022-07-09 06:40:17.093 | INFO     | tools.trainer:val_loop:179 - Valid | Epoch [040/040], with lr = 3.705904774487397e-05, Step [0083],                    [val_loss: 0.1961]
+2022-07-09 06:40:17.317 | INFO     | tools.trainer:val_loop:205 - Macro scores: Dice all: 0.896 | IOU all: 0.819 | Dice neo: 0.850 | IOU neo: 0.750 | Dice non: 0.576 | IOU non: 0.432
+2022-07-09 06:47:06.886 | INFO     | tools.trainer:val_loop:179 - Valid | Epoch [041/041], with lr = 3.4549150281252636e-05, Step [0083],                    [val_loss: 0.1462]
+2022-07-09 06:47:07.125 | INFO     | tools.trainer:val_loop:205 - Macro scores: Dice all: 0.880 | IOU all: 0.795 | Dice neo: 0.854 | IOU neo: 0.757 | Dice non: 0.653 | IOU non: 0.508
+2022-07-09 06:53:56.250 | INFO     | tools.trainer:val_loop:179 - Valid | Epoch [042/042], with lr = 3.2081602522734986e-05, Step [0083],                    [val_loss: 0.2156]
+2022-07-09 06:53:56.478 | INFO     | tools.trainer:val_loop:205 - Macro scores: Dice all: 0.895 | IOU all: 0.818 | Dice neo: 0.846 | IOU neo: 0.743 | Dice non: 0.522 | IOU non: 0.384
+2022-07-09 07:00:44.928 | INFO     | tools.trainer:val_loop:179 - Valid | Epoch [043/043], with lr = 2.9663167846209998e-05, Step [0083],                    [val_loss: 0.1637]
+2022-07-09 07:00:45.157 | INFO     | tools.trainer:val_loop:205 - Macro scores: Dice all: 0.888 | IOU all: 0.808 | Dice neo: 0.855 | IOU neo: 0.756 | Dice non: 0.624 | IOU non: 0.480
+2022-07-09 07:07:34.484 | INFO     | tools.trainer:val_loop:179 - Valid | Epoch [044/044], with lr = 2.7300475013022663e-05, Step [0083],                    [val_loss: 0.1865]
+2022-07-09 07:07:34.718 | INFO     | tools.trainer:val_loop:205 - Macro scores: Dice all: 0.898 | IOU all: 0.824 | Dice neo: 0.856 | IOU neo: 0.758 | Dice non: 0.576 | IOU non: 0.431
+2022-07-09 07:14:23.471 | INFO     | tools.trainer:val_loop:179 - Valid | Epoch [045/045], with lr = 2.500000000000001e-05, Step [0083],                    [val_loss: 0.1680]
+2022-07-09 07:14:23.696 | INFO     | tools.trainer:val_loop:205 - Macro scores: Dice all: 0.894 | IOU all: 0.815 | Dice neo: 0.854 | IOU neo: 0.756 | Dice non: 0.636 | IOU non: 0.488
+2022-07-09 07:21:12.617 | INFO     | tools.trainer:val_loop:179 - Valid | Epoch [046/046], with lr = 2.2768048249248665e-05, Step [0083],                    [val_loss: 0.1588]
+2022-07-09 07:21:12.836 | INFO     | tools.trainer:val_loop:205 - Macro scores: Dice all: 0.898 | IOU all: 0.821 | Dice neo: 0.862 | IOU neo: 0.767 | Dice non: 0.664 | IOU non: 0.518
+2022-07-09 07:28:01.833 | INFO     | tools.trainer:val_loop:179 - Valid | Epoch [047/047], with lr = 2.061073738537635e-05, Step [0083],                    [val_loss: 0.1798]
+2022-07-09 07:28:02.071 | INFO     | tools.trainer:val_loop:205 - Macro scores: Dice all: 0.901 | IOU all: 0.828 | Dice neo: 0.874 | IOU neo: 0.782 | Dice non: 0.631 | IOU non: 0.490
+2022-07-09 07:34:50.651 | INFO     | tools.trainer:val_loop:179 - Valid | Epoch [048/048], with lr = 1.8533980447508137e-05, Step [0083],                    [val_loss: 0.1906]
+2022-07-09 07:34:50.888 | INFO     | tools.trainer:val_loop:205 - Macro scores: Dice all: 0.904 | IOU all: 0.831 | Dice neo: 0.857 | IOU neo: 0.758 | Dice non: 0.600 | IOU non: 0.448
+2022-07-09 07:41:38.999 | INFO     | tools.trainer:val_loop:179 - Valid | Epoch [049/049], with lr = 1.6543469682057106e-05, Step [0083],                    [val_loss: 0.1646]
+2022-07-09 07:41:39.224 | INFO     | tools.trainer:val_loop:205 - Macro scores: Dice all: 0.901 | IOU all: 0.826 | Dice neo: 0.861 | IOU neo: 0.767 | Dice non: 0.634 | IOU non: 0.489
+2022-07-09 07:48:28.383 | INFO     | tools.trainer:val_loop:179 - Valid | Epoch [050/050], with lr = 1.4644660940672627e-05, Step [0083],                    [val_loss: 0.1684]
+2022-07-09 07:48:28.616 | INFO     | tools.trainer:val_loop:205 - Macro scores: Dice all: 0.905 | IOU all: 0.832 | Dice neo: 0.866 | IOU neo: 0.770 | Dice non: 0.630 | IOU non: 0.484
+2022-07-09 07:55:17.728 | INFO     | tools.trainer:val_loop:179 - Valid | Epoch [051/051], with lr = 1.2842758726130299e-05, Step [0083],                    [val_loss: 0.1581]
+2022-07-09 07:55:17.961 | INFO     | tools.trainer:val_loop:205 - Macro scores: Dice all: 0.906 | IOU all: 0.832 | Dice neo: 0.851 | IOU neo: 0.752 | Dice non: 0.638 | IOU non: 0.492
+2022-07-09 08:02:07.081 | INFO     | tools.trainer:val_loop:179 - Valid | Epoch [052/052], with lr = 1.1142701927151456e-05, Step [0083],                    [val_loss: 0.1483]
+2022-07-09 08:02:07.319 | INFO     | tools.trainer:val_loop:205 - Macro scores: Dice all: 0.909 | IOU all: 0.839 | Dice neo: 0.874 | IOU neo: 0.784 | Dice non: 0.662 | IOU non: 0.518
+2022-07-09 08:08:55.300 | INFO     | tools.trainer:val_loop:179 - Valid | Epoch [053/053], with lr = 9.549150281252633e-06, Step [0083],                    [val_loss: 0.1734]
+2022-07-09 08:08:55.531 | INFO     | tools.trainer:val_loop:205 - Macro scores: Dice all: 0.910 | IOU all: 0.840 | Dice neo: 0.867 | IOU neo: 0.774 | Dice non: 0.627 | IOU non: 0.481
+2022-07-09 08:15:44.799 | INFO     | tools.trainer:val_loop:179 - Valid | Epoch [054/054], with lr = 8.066471602728803e-06, Step [0083],                    [val_loss: 0.1661]
+2022-07-09 08:15:45.017 | INFO     | tools.trainer:val_loop:205 - Macro scores: Dice all: 0.911 | IOU all: 0.842 | Dice neo: 0.864 | IOU neo: 0.770 | Dice non: 0.634 | IOU non: 0.485
+2022-07-09 08:22:33.851 | INFO     | tools.trainer:val_loop:179 - Valid | Epoch [055/055], with lr = 6.698729810778065e-06, Step [0083],                    [val_loss: 0.1677]
+2022-07-09 08:22:34.079 | INFO     | tools.trainer:val_loop:205 - Macro scores: Dice all: 0.909 | IOU all: 0.840 | Dice neo: 0.867 | IOU neo: 0.771 | Dice non: 0.598 | IOU non: 0.453
+2022-07-09 08:29:22.743 | INFO     | tools.trainer:val_loop:179 - Valid | Epoch [056/056], with lr = 5.449673790581611e-06, Step [0083],                    [val_loss: 0.1540]
+2022-07-09 08:29:22.967 | INFO     | tools.trainer:val_loop:205 - Macro scores: Dice all: 0.912 | IOU all: 0.843 | Dice neo: 0.877 | IOU neo: 0.788 | Dice non: 0.651 | IOU non: 0.511
+2022-07-09 08:36:12.319 | INFO     | tools.trainer:val_loop:179 - Valid | Epoch [057/057], with lr = 4.322727117869951e-06, Step [0083],                    [val_loss: 0.1575]
+2022-07-09 08:36:12.556 | INFO     | tools.trainer:val_loop:205 - Macro scores: Dice all: 0.910 | IOU all: 0.839 | Dice neo: 0.869 | IOU neo: 0.779 | Dice non: 0.646 | IOU non: 0.505
+2022-07-09 08:43:01.827 | INFO     | tools.trainer:val_loop:179 - Valid | Epoch [058/058], with lr = 3.320978675139913e-06, Step [0083],                    [val_loss: 0.1493]
+2022-07-09 08:43:02.059 | INFO     | tools.trainer:val_loop:205 - Macro scores: Dice all: 0.914 | IOU all: 0.846 | Dice neo: 0.871 | IOU neo: 0.781 | Dice non: 0.637 | IOU non: 0.495
+2022-07-09 08:49:51.329 | INFO     | tools.trainer:val_loop:179 - Valid | Epoch [059/059], with lr = 2.4471741852423237e-06, Step [0083],                    [val_loss: 0.1480]
+2022-07-09 08:49:51.547 | INFO     | tools.trainer:val_loop:205 - Macro scores: Dice all: 0.908 | IOU all: 0.839 | Dice neo: 0.872 | IOU neo: 0.783 | Dice non: 0.636 | IOU non: 0.492
+2022-07-09 08:49:51.986 | INFO     | tools.trainer:train_loop:115 - [Saving Snapshot:]/home/s/hungpv/polyps/checkpoints/neo_large_v1/MiT-B3-UPerHead_60.pth
+2022-07-09 08:49:51.986 | INFO     | tools.trainer:train_loop:124 - Training cost: 24547.290216014022seconds

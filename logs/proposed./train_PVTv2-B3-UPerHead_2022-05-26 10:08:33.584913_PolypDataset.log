@@ -1,0 +1,18 @@
+2022-05-26 10:08:33.589 | INFO     | __main__:main:46 - Load config from configs/proposed.yaml
+2022-05-26 10:08:33.589 | INFO     | __main__:main:47 - {'dataset': {'data_path': '/home/admin_mcn/hungpv/polyps/dataset/KCECE', 'train_data_path': ['/home/admin_mcn/hungpv/polyps/dataset/KCECE/TrainDataset'], 'test_data_path': ['/home/admin_mcn/hungpv/polyps/dataset/KCECE/TestDataset/Kvasir'], 'val_data_path': ['/home/admin_mcn/hungpv/polyps/dataset/KCECE/TestDataset/CVC-300']}, 'model': {'num_classes': 1, 'save_dir': '/mnt/data/hungpv/polyps/checkpoint/KCECE/proposed_v5', 'backbone': 'PVTv2-B3', 'head': 'UPerHead', 'pretrained': '/mnt/data/hungpv/polyps/pretrained-backbone/pvt_v2_b3.pth'}, 'optimizer': {'name': 'adamw', 'lr': 0.0001, 'clip': 0.5, 'scheduler': 'cosine_warmup', 'loss': 'structure_loss'}, 'dev': 'cuda', 'train': {'start_from': 0, 'save_from': 29, 'num_epochs': 30, 'num_warmup_epoch': 10, 'is_val': False, 'size_rates': [0.75, 1, 1.25], 'dataloader': {'batchsize': 16, 'img_size': 352, 'shuffle': True, 'num_workers': 2, 'pin_memory': True, 'drop_last': True}, 'amp': True, 'ddp': False, 'augment': {'prob': 1, 'Flip_prob': 0.5, 'HueSaturationValue_prob': 0.5, 'RandomBrightnessContrast_prob': 0.5, 'crop_prob': 0.0, 'randomrotate90_prob': 0.7}}, 'test': {'dev': 'cuda', 'visualize': False, 'visualize_dir': '/mnt/data/hungpv/polyps/visualize', 'vis_x': 180, 'vis_overwrite': False, 'checkpoint_dir': '/mnt/data/hungpv/polyps/checkpoint/KCECE/proposed_v4/PVTv2-B3-UPerHead_60.pth', 'dataloader': {'batchsize': 1, 'img_size': 352, 'shuffle': True, 'num_workers': 2, 'pin_memory': True, 'drop_last': True}, 'augment': {'prob': 1, 'Flip_prob': 0, 'HueSaturationValue_prob': 0, 'RandomBrightnessContrast_prob': 0, 'crop_prob': 0, 'randomrotate90_prob': 0, 'elastictransform_prob': 0, 'gridistortion_prob': 0, 'opticaldistortion_prob': 0, 'verticalflip_prob': 0, 'horizontalflip_prob': 0, 'randomgamma_prob': 0, 'CoarseDropout_prob': 0, 'RGBShift_prob': 0, 'MotionBlur_prob': 0, 'MedianBlur_prob': 0, 'GaussianBlur_prob': 0, 'GaussNoise_prob': 0, 'ChannelShuffle_prob': 0}}}
+2022-05-26 10:08:33.589 | INFO     | __main__:main:48 - Getting datapath
+2022-05-26 10:08:33.594 | INFO     | __main__:main:62 - There are 1450 images to train
+2022-05-26 10:08:33.594 | INFO     | __main__:main:81 - Train model with no valid dataset
+2022-05-26 10:08:33.594 | INFO     | __main__:main:83 - Loading data
+2022-05-26 10:08:33.659 | INFO     | __main__:main:97 - 90 batches to train
+2022-05-26 10:08:33.662 | INFO     | __main__:main:110 - Loading model
+2022-05-26 10:08:33.662 | INFO     | __main__:main:131 - Loading checkpoint from /mnt/data/hungpv/polyps/pretrained-backbone/pvt_v2_b3.pth ...
+2022-05-26 10:08:36.987 | INFO     | __main__:main:172 - Training with mixed precision ...
+2022-05-26 10:09:53.294 | INFO     | tools.trainer:train_loop:103 - Epoch: [1/ 30] | Train loss: [nan]
+2022-05-26 10:11:03.336 | INFO     | tools.trainer:train_loop:103 - Epoch: [2/ 30] | Train loss: [nan]
+2022-05-26 10:12:15.996 | INFO     | tools.trainer:train_loop:103 - Epoch: [3/ 30] | Train loss: [nan]
+2022-05-26 10:12:16.200 | INFO     | tools.trainer:train_loop:115 - [Saving Snapshot:]/mnt/data/hungpv/polyps/checkpoint/KCECE/proposed_v5/PVTv2-B3-UPerHead_3.pth
+2022-05-26 10:13:30.553 | INFO     | tools.trainer:train_loop:103 - Epoch: [4/ 30] | Train loss: [nan]
+2022-05-26 10:14:45.479 | INFO     | tools.trainer:train_loop:103 - Epoch: [5/ 30] | Train loss: [nan]
+2022-05-26 10:16:01.170 | INFO     | tools.trainer:train_loop:103 - Epoch: [6/ 30] | Train loss: [nan]
+2022-05-26 10:17:19.821 | INFO     | tools.trainer:train_loop:103 - Epoch: [7/ 30] | Train loss: [nan]

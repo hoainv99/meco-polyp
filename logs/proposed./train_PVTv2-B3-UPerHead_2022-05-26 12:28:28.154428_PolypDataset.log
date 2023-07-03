@@ -1,0 +1,73 @@
+2022-05-26 12:28:28.158 | INFO     | __main__:main:46 - Load config from configs/proposed.yaml
+2022-05-26 12:28:28.158 | INFO     | __main__:main:47 - {'dataset': {'data_path': '/home/admin_mcn/hungpv/polyps/dataset/KCECE', 'train_data_path': ['/home/admin_mcn/hungpv/polyps/dataset/KCECE/TrainDataset'], 'test_data_path': ['/home/admin_mcn/hungpv/polyps/dataset/KCECE/TestDataset/CVC-ClinicDB'], 'val_data_path': ['/home/admin_mcn/hungpv/polyps/dataset/KCECE/TestDataset/CVC-300']}, 'model': {'num_classes': 1, 'save_dir': '/mnt/data/hungpv/polyps/checkpoint/KCECE/proposed_v5', 'backbone': 'PVTv2-B3', 'head': 'UPerHead', 'pretrained': '/mnt/data/hungpv/polyps/pretrained-backbone/pvt_v2_b3.pth'}, 'optimizer': {'name': 'adamw', 'lr': 0.0001, 'clip': 0.5, 'scheduler': 'cosine_warmup', 'loss': 'structure_loss'}, 'dev': 'cuda', 'train': {'start_from': 0, 'save_from': 59, 'num_epochs': 60, 'num_warmup_epoch': 10, 'is_val': False, 'size_rates': [0.75, 1, 1.25], 'dataloader': {'batchsize': 16, 'img_size': 352, 'shuffle': True, 'num_workers': 2, 'pin_memory': True, 'drop_last': True}, 'amp': False, 'ddp': False, 'augment': {'prob': 1, 'Flip_prob': 0.5, 'HueSaturationValue_prob': 0.5, 'RandomBrightnessContrast_prob': 0.5, 'crop_prob': 0.0, 'randomrotate90_prob': 0.7}}, 'test': {'dev': 'cuda', 'visualize': False, 'visualize_dir': '/mnt/data/hungpv/polyps/visualize', 'vis_x': 180, 'vis_overwrite': False, 'checkpoint_dir': '/mnt/data/hungpv/polyps/checkpoint/KCECE/proposed_v5/PVTv2-B3-UPerHead_30.pth', 'dataloader': {'batchsize': 1, 'img_size': 352, 'shuffle': True, 'num_workers': 2, 'pin_memory': True, 'drop_last': True}, 'augment': {'prob': 1, 'Flip_prob': 0, 'HueSaturationValue_prob': 0, 'RandomBrightnessContrast_prob': 0, 'crop_prob': 0, 'randomrotate90_prob': 0, 'elastictransform_prob': 0, 'gridistortion_prob': 0, 'opticaldistortion_prob': 0, 'verticalflip_prob': 0, 'horizontalflip_prob': 0, 'randomgamma_prob': 0, 'CoarseDropout_prob': 0, 'RGBShift_prob': 0, 'MotionBlur_prob': 0, 'MedianBlur_prob': 0, 'GaussianBlur_prob': 0, 'GaussNoise_prob': 0, 'ChannelShuffle_prob': 0}}}
+2022-05-26 12:28:28.158 | INFO     | __main__:main:48 - Getting datapath
+2022-05-26 12:28:28.163 | INFO     | __main__:main:62 - There are 1450 images to train
+2022-05-26 12:28:28.163 | INFO     | __main__:main:81 - Train model with no valid dataset
+2022-05-26 12:28:28.163 | INFO     | __main__:main:83 - Loading data
+2022-05-26 12:28:28.226 | INFO     | __main__:main:97 - 90 batches to train
+2022-05-26 12:28:28.229 | INFO     | __main__:main:110 - Loading model
+2022-05-26 12:28:28.229 | INFO     | __main__:main:131 - Loading checkpoint from /mnt/data/hungpv/polyps/pretrained-backbone/pvt_v2_b3.pth ...
+2022-05-26 12:28:31.430 | INFO     | __main__:main:174 - Training with FP32 ...
+2022-05-26 12:31:40.249 | INFO     | tools.trainer:train_loop:103 - Epoch: [1/ 60] | Train loss: [2.0315049337016213]
+2022-05-26 12:34:59.644 | INFO     | tools.trainer:train_loop:103 - Epoch: [2/ 60] | Train loss: [0.8397305124335819]
+2022-05-26 12:38:19.362 | INFO     | tools.trainer:train_loop:103 - Epoch: [3/ 60] | Train loss: [0.6366320699453354]
+2022-05-26 12:38:20.052 | INFO     | tools.trainer:train_loop:115 - [Saving Snapshot:]/mnt/data/hungpv/polyps/checkpoint/KCECE/proposed_v5/PVTv2-B3-UPerHead_3.pth
+2022-05-26 12:41:28.805 | INFO     | tools.trainer:train_loop:103 - Epoch: [4/ 60] | Train loss: [0.4840984543164571]
+2022-05-26 12:44:37.758 | INFO     | tools.trainer:train_loop:103 - Epoch: [5/ 60] | Train loss: [0.4020674569739236]
+2022-05-26 12:47:46.114 | INFO     | tools.trainer:train_loop:103 - Epoch: [6/ 60] | Train loss: [0.35834416879547965]
+2022-05-26 12:51:07.906 | INFO     | tools.trainer:train_loop:103 - Epoch: [7/ 60] | Train loss: [0.3162835195660591]
+2022-05-26 12:54:29.646 | INFO     | tools.trainer:train_loop:103 - Epoch: [8/ 60] | Train loss: [0.2715470708078808]
+2022-05-26 12:57:49.868 | INFO     | tools.trainer:train_loop:103 - Epoch: [9/ 60] | Train loss: [0.24182050012879902]
+2022-05-26 13:00:59.415 | INFO     | tools.trainer:train_loop:103 - Epoch: [10/ 60] | Train loss: [0.24316111902395884]
+2022-05-26 13:04:20.522 | INFO     | tools.trainer:train_loop:103 - Epoch: [11/ 60] | Train loss: [0.22839487807618247]
+2022-05-26 13:07:33.195 | INFO     | tools.trainer:train_loop:103 - Epoch: [12/ 60] | Train loss: [0.23435671925544738]
+2022-05-26 13:10:41.312 | INFO     | tools.trainer:train_loop:103 - Epoch: [13/ 60] | Train loss: [0.2009330991241667]
+2022-05-26 13:13:48.886 | INFO     | tools.trainer:train_loop:103 - Epoch: [14/ 60] | Train loss: [0.19490326974127029]
+2022-05-26 13:16:56.020 | INFO     | tools.trainer:train_loop:103 - Epoch: [15/ 60] | Train loss: [0.1774832503663169]
+2022-05-26 13:20:02.903 | INFO     | tools.trainer:train_loop:103 - Epoch: [16/ 60] | Train loss: [0.19298614015181859]
+2022-05-26 13:23:09.197 | INFO     | tools.trainer:train_loop:103 - Epoch: [17/ 60] | Train loss: [0.17604418694972992]
+2022-05-26 13:26:15.640 | INFO     | tools.trainer:train_loop:103 - Epoch: [18/ 60] | Train loss: [0.16738556606902016]
+2022-05-26 13:29:22.751 | INFO     | tools.trainer:train_loop:103 - Epoch: [19/ 60] | Train loss: [0.16131554883387353]
+2022-05-26 13:32:30.048 | INFO     | tools.trainer:train_loop:103 - Epoch: [20/ 60] | Train loss: [0.15576079396737946]
+2022-05-26 13:35:37.178 | INFO     | tools.trainer:train_loop:103 - Epoch: [21/ 60] | Train loss: [0.15017304147283236]
+2022-05-26 13:38:44.468 | INFO     | tools.trainer:train_loop:103 - Epoch: [22/ 60] | Train loss: [0.14987214472558763]
+2022-05-26 13:41:51.602 | INFO     | tools.trainer:train_loop:103 - Epoch: [23/ 60] | Train loss: [0.1510045212176111]
+2022-05-26 13:44:58.729 | INFO     | tools.trainer:train_loop:103 - Epoch: [24/ 60] | Train loss: [0.13827765385309856]
+2022-05-26 13:48:05.789 | INFO     | tools.trainer:train_loop:103 - Epoch: [25/ 60] | Train loss: [0.13307618747154873]
+2022-05-26 13:51:12.760 | INFO     | tools.trainer:train_loop:103 - Epoch: [26/ 60] | Train loss: [0.13108194776707224]
+2022-05-26 13:54:20.081 | INFO     | tools.trainer:train_loop:103 - Epoch: [27/ 60] | Train loss: [0.1417211319009463]
+2022-05-26 13:57:27.780 | INFO     | tools.trainer:train_loop:103 - Epoch: [28/ 60] | Train loss: [0.13080748054716324]
+2022-05-26 14:00:35.751 | INFO     | tools.trainer:train_loop:103 - Epoch: [29/ 60] | Train loss: [0.12889862739377553]
+2022-05-26 14:03:43.689 | INFO     | tools.trainer:train_loop:103 - Epoch: [30/ 60] | Train loss: [0.13038589730858802]
+2022-05-26 14:06:52.138 | INFO     | tools.trainer:train_loop:103 - Epoch: [31/ 60] | Train loss: [0.12491209126181073]
+2022-05-26 14:10:00.333 | INFO     | tools.trainer:train_loop:103 - Epoch: [32/ 60] | Train loss: [0.1283921167254448]
+2022-05-26 14:13:08.492 | INFO     | tools.trainer:train_loop:103 - Epoch: [33/ 60] | Train loss: [0.12093772209352917]
+2022-05-26 14:16:17.485 | INFO     | tools.trainer:train_loop:103 - Epoch: [34/ 60] | Train loss: [0.11901905139287312]
+2022-05-26 14:19:25.611 | INFO     | tools.trainer:train_loop:103 - Epoch: [35/ 60] | Train loss: [0.11537732738587592]
+2022-05-26 14:22:33.011 | INFO     | tools.trainer:train_loop:103 - Epoch: [36/ 60] | Train loss: [0.11200853354401058]
+2022-05-26 14:25:40.830 | INFO     | tools.trainer:train_loop:103 - Epoch: [37/ 60] | Train loss: [0.10688410302003225]
+2022-05-26 14:28:48.437 | INFO     | tools.trainer:train_loop:103 - Epoch: [38/ 60] | Train loss: [0.10994230235616366]
+2022-05-26 14:31:55.301 | INFO     | tools.trainer:train_loop:103 - Epoch: [39/ 60] | Train loss: [0.10571500054664082]
+2022-05-26 14:35:02.854 | INFO     | tools.trainer:train_loop:103 - Epoch: [40/ 60] | Train loss: [0.10347670863072077]
+2022-05-26 14:38:12.118 | INFO     | tools.trainer:train_loop:103 - Epoch: [41/ 60] | Train loss: [0.10156902058256997]
+2022-05-26 14:41:29.714 | INFO     | tools.trainer:train_loop:103 - Epoch: [42/ 60] | Train loss: [0.10033397393094169]
+2022-05-26 14:44:55.910 | INFO     | tools.trainer:train_loop:103 - Epoch: [43/ 60] | Train loss: [0.10166744631197717]
+2022-05-26 14:48:23.065 | INFO     | tools.trainer:train_loop:103 - Epoch: [44/ 60] | Train loss: [0.0995817100836171]
+2022-05-26 14:51:36.460 | INFO     | tools.trainer:train_loop:103 - Epoch: [45/ 60] | Train loss: [0.0961873162123892]
+2022-05-26 14:55:06.020 | INFO     | tools.trainer:train_loop:103 - Epoch: [46/ 60] | Train loss: [0.09768655258748267]
+2022-05-26 14:58:48.501 | INFO     | tools.trainer:train_loop:103 - Epoch: [47/ 60] | Train loss: [0.0938376290930642]
+2022-05-26 15:02:38.263 | INFO     | tools.trainer:train_loop:103 - Epoch: [48/ 60] | Train loss: [0.0934669892821047]
+2022-05-26 15:06:30.194 | INFO     | tools.trainer:train_loop:103 - Epoch: [49/ 60] | Train loss: [0.09131364987956153]
+2022-05-26 15:10:22.616 | INFO     | tools.trainer:train_loop:103 - Epoch: [50/ 60] | Train loss: [0.09069304284122255]
+2022-05-26 15:14:14.934 | INFO     | tools.trainer:train_loop:103 - Epoch: [51/ 60] | Train loss: [0.08955851255191696]
+2022-05-26 15:18:06.299 | INFO     | tools.trainer:train_loop:103 - Epoch: [52/ 60] | Train loss: [0.08742092210385534]
+2022-05-26 15:21:54.460 | INFO     | tools.trainer:train_loop:103 - Epoch: [53/ 60] | Train loss: [0.08685837760567665]
+2022-05-26 15:25:44.022 | INFO     | tools.trainer:train_loop:103 - Epoch: [54/ 60] | Train loss: [0.08518186890416675]
+2022-05-26 15:29:37.612 | INFO     | tools.trainer:train_loop:103 - Epoch: [55/ 60] | Train loss: [0.08459511639343367]
+2022-05-26 15:33:33.760 | INFO     | tools.trainer:train_loop:103 - Epoch: [56/ 60] | Train loss: [0.08421760751969284]
+2022-05-26 15:37:18.940 | INFO     | tools.trainer:train_loop:103 - Epoch: [57/ 60] | Train loss: [0.08318123684989082]
+2022-05-26 15:40:31.783 | INFO     | tools.trainer:train_loop:103 - Epoch: [58/ 60] | Train loss: [0.0831398218870163]
+2022-05-26 15:43:42.010 | INFO     | tools.trainer:train_loop:103 - Epoch: [59/ 60] | Train loss: [0.08207053451074495]
+2022-05-26 15:46:50.535 | INFO     | tools.trainer:train_loop:103 - Epoch: [60/ 60] | Train loss: [0.08103753560119205]
+2022-05-26 15:46:50.730 | INFO     | tools.trainer:train_loop:115 - [Saving Snapshot:]/mnt/data/hungpv/polyps/checkpoint/KCECE/proposed_v5/PVTv2-B3-UPerHead_60.pth
+2022-05-26 15:46:50.731 | INFO     | tools.trainer:train_loop:124 - Training cost: 11898.350848654984seconds

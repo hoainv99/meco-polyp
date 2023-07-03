@@ -1,0 +1,20 @@
+2022-07-20 19:02:31.839 | INFO     | __main__:main:57 - Load config from configs/neo_large.yaml
+2022-07-20 19:02:31.839 | INFO     | __main__:main:58 - {'dataset': {'data_path': '/home/s/WLIv5_pub_noud', 'train_data_path': ['/home/s/WLIv5_pub_noud/Test'], 'test_data_path': ['/home/s/WLIv5_pub_noud/Test'], 'val_data_path': ['/home/s/WLIv5_pub_noud/Test']}, 'model': {'num_classes': 3, 'save_dir': '/home/s/hungpv/polyps/checkpoints/neo_large_v6', 'backbone': 'MiT-B3', 'head': 'UPerHead', 'pretrained': '/home/s/hungpv/polyps/pretrained_models/mit_b3.pth'}, 'optimizer': {'name': 'adam', 'lr': 0.0001, 'clip': 0.5, 'scheduler': 'cosine_warmup', 'loss': 'CustomLoss'}, 'dev': 'cuda', 'train': {'start_from': 0, 'save_from': 59, 'num_epochs': 60, 'num_warmup_epoch': 4, 'is_val': True, 'size_rates': [0.75, 1, 1.25], 'dataloader': {'batchsize': 16, 'img_size': 352, 'shuffle': True, 'num_workers': 4, 'pin_memory': True, 'drop_last': True}, 'amp': False, 'ddp': False, 'augment': {'prob': 1, 'Flip_prob': 0.5, 'HueSaturationValue_prob': 0.5, 'RandomBrightnessContrast_prob': 0.5, 'crop_prob': 0.0, 'randomrotate90_prob': 0.5, 'elastictransform_prob': 0.0, 'ColorJitter_prob': 0.5}}, 'val': {'dataloader': {'batchsize': 8, 'img_size': 352, 'shuffle': True, 'num_workers': 4, 'pin_memory': True, 'drop_last': False}}, 'test': {'dev': 'cuda', 'visualize': True, 'visualize_dir': '/home/s/hungpv/polyps/neo_visualize', 'vis_x': 180, 'vis_overwrite': False, 'checkpoint_dir': '/home/s/hungpv/polyps/checkpoints/neo_large_v6/MiT-B3-UPerHead_60.pth', 'dataloader': {'batchsize': 1, 'img_size': 352, 'shuffle': True, 'num_workers': 4, 'pin_memory': True, 'drop_last': False}, 'augment': {'prob': 1, 'Flip_prob': 0, 'HueSaturationValue_prob': 0, 'RandomBrightnessContrast_prob': 0, 'crop_prob': 0, 'randomrotate90_prob': 0, 'elastictransform_prob': 0, 'gridistortion_prob': 0, 'opticaldistortion_prob': 0, 'verticalflip_prob': 0, 'horizontalflip_prob': 0, 'randomgamma_prob': 0, 'CoarseDropout_prob': 0, 'RGBShift_prob': 0, 'MotionBlur_prob': 0, 'MedianBlur_prob': 0, 'GaussianBlur_prob': 0, 'GaussNoise_prob': 0, 'ChannelShuffle_prob': 0}}}
+2022-07-20 19:02:31.839 | INFO     | __main__:main:59 - Getting datapath
+2022-07-20 19:02:31.845 | INFO     | __main__:main:74 - There are 1353 images to train
+2022-07-20 19:02:31.852 | INFO     | __main__:main:91 - There are 1353 images to val
+2022-07-20 19:02:31.852 | INFO     | __main__:main:95 - Loading data
+2022-07-20 19:02:32.056 | INFO     | __main__:main:109 - 84 batches to train
+2022-07-20 19:02:32.253 | INFO     | __main__:main:122 - Loading model
+2022-07-20 19:02:32.253 | INFO     | __main__:main:143 - Loading checkpoint from /home/s/hungpv/polyps/pretrained_models/mit_b3.pth ...
+2022-07-20 19:02:35.381 | INFO     | __main__:main:187 - Training with FP32 ...
+2022-07-20 19:04:45.594 | INFO     | tools.trainer:val_loop:201 - Valid | Epoch [000/000], with lr = 1.25e-05, Step [0169],                    [val_loss: 3.9530]
+2022-07-20 19:04:45.703 | INFO     | aux.metrics.metrics:show:228 - Evaluate polyp
+2022-07-20 19:04:45.704 | INFO     | aux.metrics.metrics:show:229 - Macro scores: Dice: 0.091 | IOU: 0.048
+2022-07-20 19:04:45.704 | INFO     | aux.metrics.metrics:show:233 - Micro scores: Dice: 0.092 | IOU: 0.048
+2022-07-20 19:04:45.704 | INFO     | aux.metrics.metrics:show:228 - Evaluate neo
+2022-07-20 19:04:45.704 | INFO     | aux.metrics.metrics:show:229 - Macro scores: Dice: 0.064 | IOU: 0.033
+2022-07-20 19:04:45.704 | INFO     | aux.metrics.metrics:show:233 - Micro scores: Dice: 0.065 | IOU: 0.033
+2022-07-20 19:04:45.704 | INFO     | aux.metrics.metrics:show:228 - Evaluate non
+2022-07-20 19:04:45.705 | INFO     | aux.metrics.metrics:show:229 - Macro scores: Dice: 0.021 | IOU: 0.011
+2022-07-20 19:04:45.705 | INFO     | aux.metrics.metrics:show:233 - Micro scores: Dice: 0.024 | IOU: 0.012

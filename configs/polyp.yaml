@@ -1,0 +1,111 @@
+
+dataset:
+  data_path: ../datasets
+  train_data_path:
+    - /home/hoainv6/semantic-segmentation/datasets/train/
+  test_data_path:
+    - /home/hoainv6/semantic-segmentation/datasets/test/CVC-300
+    - /home/hoainv6/semantic-segmentation/datasets/test/CVC-ClinicDB
+    - /home/hoainv6/semantic-segmentation/datasets/test/CVC-ColonDB
+    - /home/hoainv6/semantic-segmentation/datasets/test/ETIS-LaribPolypDB
+    - /home/hoainv6/semantic-segmentation/datasets/test/Kvasir
+  # val_data_path:
+  #   - /home/hoainv6/semantic-segmentation/datasets/test/Kvasir
+model:
+  num_classes: 1
+  save_dir: checkpoint
+  backbone: MiT-B3
+  head: FaPNHead
+  pretrained: 'mit_b3.pth'
+
+optimizer:
+  name: adam
+  lr: 0.0001
+  clip: 0.5
+  scheduler: cosine_warmup
+  loss: structure_loss
+
+dev: cuda
+
+train:
+  start_from: 0
+  save_from: 59
+  num_epochs: 60
+  num_warmup_epoch: 6
+  is_val: False
+  size_rates:
+    - 0.75
+    - 1
+    - 1.25
+
+  dataloader:
+    batchsize: 8
+    img_size: 384
+    shuffle: True
+    num_workers: 4
+    pin_memory: True
+    drop_last: True
+
+  amp: False
+  ddp: False
+
+  augment:
+    prob: 0.5
+    Flip_prob: 0.5
+    HueSaturationValue_prob: 0.5
+    RandomBrightnessContrast_prob: 0.5
+    # crop_prob: 0.3
+    # randomrotate90_prob: 0.5
+    # elastictransform_prob: 0.5
+    # gridistortion_prob: 0.7
+    # opticaldistortion_prob: 0.7
+    # verticalflip_prob: 0.5
+    # horizontalflip_prob: 0.5
+    # randomgamma_prob: 0.7
+    # CoarseDropout_prob: 0.7
+    # RGBShift_prob: 0.7
+    # MotionBlur_prob: 0.7
+    # MedianBlur_prob: 0.7
+    # GaussianBlur_prob: 0.3
+    # GaussNoise_prob: 0.7
+    # ChannelShuffle_prob: 0.7
+    # ColorJitter_prob: 0.5
+  augment_weak:
+    prob: 1
+    Flip_prob: 0.5
+
+test:
+  dev: cuda
+  visualize: False
+  csv: csv
+  visualize_dir: 'csv'
+  vis_x: 180
+  vis_overwrite: False
+  checkpoint_dir: '/home/hoainv6/semantic-segmentation/medical-segmentation/configs/code/checkpoint/MiT-B3-FaPNHead_60.pth'
+  dataloader:
+    batchsize: 1
+    img_size: 384 
+    shuffle: True
+    num_workers: 2
+    pin_memory: True
+    drop_last: False
+  augment:
+    prob: 1
+    Flip_prob: 0
+    HueSaturationValue_prob: 0
+    RandomBrightnessContrast_prob: 0
+    crop_prob: 0
+    randomrotate90_prob: 0
+    elastictransform_prob: 0
+    gridistortion_prob: 0
+    opticaldistortion_prob: 0
+    verticalflip_prob: 0
+    horizontalflip_prob: 0
+    randomgamma_prob: 0
+    CoarseDropout_prob: 0
+    RGBShift_prob: 0
+    MotionBlur_prob: 0
+    MedianBlur_prob: 0
+    GaussianBlur_prob: 0
+    GaussNoise_prob: 0
+    ChannelShuffle_prob: 0

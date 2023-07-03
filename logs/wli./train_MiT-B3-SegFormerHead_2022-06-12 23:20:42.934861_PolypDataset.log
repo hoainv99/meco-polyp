@@ -1,0 +1,143 @@
+2022-06-12 23:20:42.938 | INFO     | __main__:main:45 - Load config from configs/wli.yaml
+2022-06-12 23:20:42.938 | INFO     | __main__:main:46 - {'dataset': {'data_path': '/home/admin_mcn/hungpv/polyps/dataset/WLI', 'train_data_path': ['/home/admin_mcn/hungpv/polyps/dataset/WLI/train'], 'test_data_path': ['/home/admin_mcn/hungpv/polyps/dataset/WLI/test'], 'val_data_path': ['/home/admin_mcn/hungpv/polyps/dataset/WLI/val']}, 'model': {'num_classes': 1, 'save_dir': '/home/admin_mcn/hungpv/polyps/checkpoints/wli', 'backbone': 'MiT-B3', 'head': 'SegFormerHead', 'pretrained': '/home/admin_mcn/hungpv/polyps/pretrained-backbone/mit_b3.pth'}, 'optimizer': {'name': 'adam', 'lr': 0.0001, 'clip': 0.5, 'scheduler': 'cosine_warmup', 'num_warmup_epoch': 1, 'loss': 'structure_loss'}, 'dev': 'cuda', 'train': {'start_from': 0, 'save_from': 29, 'num_epochs': 40, 'num_warmup_epoch': 4, 'is_val': True, 'size_rates': [0.75, 1, 1.25], 'dataloader': {'batchsize': 16, 'img_size': 352, 'shuffle': True, 'num_workers': 2, 'pin_memory': True, 'drop_last': True}, 'amp': False, 'ddp': False, 'augment': {'prob': 1, 'Flip_prob': 0.7, 'HueSaturationValue_prob': 0.7, 'RandomBrightnessContrast_prob': 0.5, 'crop_prob': 0.2, 'randomrotate90_prob': 0.7}}, 'test': {'dev': 'cuda', 'visualize': False, 'visualize_dir': '/mnt/data/hungpv/polyps/visualize', 'vis_x': 180, 'vis_overwrite': False, 'checkpoint_dir': '/home/admin_mcn/hungpv/polyps/checkpoints/wli/MiT-B3-SegFormerHead_20.pth', 'dataloader': {'batchsize': 1, 'img_size': 224, 'shuffle': True, 'num_workers': 2, 'pin_memory': True, 'drop_last': True}, 'augment': {'prob': 1, 'Flip_prob': 0, 'HueSaturationValue_prob': 0, 'RandomBrightnessContrast_prob': 0, 'crop_prob': 0, 'randomrotate90_prob': 0, 'elastictransform_prob': 0, 'gridistortion_prob': 0, 'opticaldistortion_prob': 0, 'verticalflip_prob': 0, 'horizontalflip_prob': 0, 'randomgamma_prob': 0, 'CoarseDropout_prob': 0, 'RGBShift_prob': 0, 'MotionBlur_prob': 0, 'MedianBlur_prob': 0, 'GaussianBlur_prob': 0, 'GaussNoise_prob': 0, 'ChannelShuffle_prob': 0}}}
+2022-06-12 23:20:42.939 | INFO     | __main__:main:47 - Getting datapath
+2022-06-12 23:20:42.941 | INFO     | __main__:main:61 - There are 601 images to train
+2022-06-12 23:20:42.941 | INFO     | __main__:main:78 - There are 150 images to val
+2022-06-12 23:20:42.941 | INFO     | __main__:main:82 - Loading data
+2022-06-12 23:20:42.987 | INFO     | __main__:main:96 - 37 batches to train
+2022-06-12 23:20:42.997 | INFO     | __main__:main:109 - Loading model
+2022-06-12 23:20:42.997 | INFO     | __main__:main:126 - Loading checkpoint from /home/admin_mcn/hungpv/polyps/pretrained-backbone/mit_b3.pth ...
+2022-06-12 23:20:46.321 | INFO     | __main__:main:169 - Training with FP32 ...
+2022-06-12 23:22:02.137 | INFO     | tools.trainer:val_loop:173 - Valid | Epoch [000/000], with lr = 1.25e-05, Step [0149],                    [val_loss: 1.3411]
+2022-06-12 23:22:02.379 | INFO     | tools.trainer:val_loop:239 - Macro scores: Dice: 0.233 | IOU: 0.141 | Precision: 0.175 | Recall: 0.509 | F2: 0.315
+2022-06-12 23:22:02.380 | INFO     | tools.trainer:val_loop:258 - Micro scores: Dice: 0.276 | IOU: 0.160 | Precision: 0.186 | Recall: 0.537
+2022-06-12 23:23:29.815 | INFO     | tools.trainer:val_loop:173 - Valid | Epoch [001/001], with lr = 1.25e-05, Step [0149],                    [val_loss: 1.0784]
+2022-06-12 23:23:30.048 | INFO     | tools.trainer:val_loop:239 - Macro scores: Dice: 0.365 | IOU: 0.244 | Precision: 0.296 | Recall: 0.607 | F2: nan
+2022-06-12 23:23:30.049 | INFO     | tools.trainer:val_loop:258 - Micro scores: Dice: 0.447 | IOU: 0.288 | Precision: 0.335 | Recall: 0.669
+2022-06-12 23:25:00.995 | INFO     | tools.trainer:val_loop:173 - Valid | Epoch [002/002], with lr = 3.4375e-05, Step [0149],                    [val_loss: 0.9757]
+2022-06-12 23:25:01.225 | INFO     | tools.trainer:val_loop:239 - Macro scores: Dice: 0.438 | IOU: 0.304 | Precision: 0.432 | Recall: 0.517 | F2: nan
+2022-06-12 23:25:01.225 | INFO     | tools.trainer:val_loop:258 - Micro scores: Dice: 0.528 | IOU: 0.359 | Precision: 0.492 | Recall: 0.570
+2022-06-12 23:25:01.407 | INFO     | tools.trainer:train_loop:115 - [Saving Snapshot:]/home/admin_mcn/hungpv/polyps/checkpoints/wli/MiT-B3-SegFormerHead_3.pth
+2022-06-12 23:26:35.768 | INFO     | tools.trainer:val_loop:173 - Valid | Epoch [003/003], with lr = 5.6250000000000005e-05, Step [0149],                    [val_loss: 0.8481]
+2022-06-12 23:26:36.008 | INFO     | tools.trainer:val_loop:239 - Macro scores: Dice: 0.483 | IOU: 0.347 | Precision: 0.406 | Recall: 0.705 | F2: 0.574
+2022-06-12 23:26:36.009 | INFO     | tools.trainer:val_loop:258 - Micro scores: Dice: 0.574 | IOU: 0.403 | Precision: 0.465 | Recall: 0.751
+2022-06-12 23:28:12.849 | INFO     | tools.trainer:val_loop:173 - Valid | Epoch [004/004], with lr = 7.8125e-05, Step [0149],                    [val_loss: 0.8155]
+2022-06-12 23:28:13.092 | INFO     | tools.trainer:val_loop:239 - Macro scores: Dice: 0.514 | IOU: 0.375 | Precision: 0.494 | Recall: 0.609 | F2: nan
+2022-06-12 23:28:13.092 | INFO     | tools.trainer:val_loop:258 - Micro scores: Dice: 0.606 | IOU: 0.435 | Precision: 0.553 | Recall: 0.670
+2022-06-12 23:29:51.021 | INFO     | tools.trainer:val_loop:173 - Valid | Epoch [005/005], with lr = 0.0001, Step [0149],                    [val_loss: 0.8357]
+2022-06-12 23:29:51.251 | INFO     | tools.trainer:val_loop:239 - Macro scores: Dice: 0.519 | IOU: 0.380 | Precision: 0.455 | Recall: 0.694 | F2: nan
+2022-06-12 23:29:51.251 | INFO     | tools.trainer:val_loop:258 - Micro scores: Dice: 0.613 | IOU: 0.442 | Precision: 0.520 | Recall: 0.746
+2022-06-12 23:31:31.441 | INFO     | tools.trainer:val_loop:173 - Valid | Epoch [006/006], with lr = 0.0001, Step [0149],                    [val_loss: 0.8487]
+2022-06-12 23:31:31.668 | INFO     | tools.trainer:val_loop:239 - Macro scores: Dice: 0.510 | IOU: 0.370 | Precision: 0.447 | Recall: 0.683 | F2: nan
+2022-06-12 23:31:31.669 | INFO     | tools.trainer:val_loop:258 - Micro scores: Dice: 0.604 | IOU: 0.433 | Precision: 0.520 | Recall: 0.721
+2022-06-12 23:33:11.019 | INFO     | tools.trainer:val_loop:173 - Valid | Epoch [007/007], with lr = 9.938441702975689e-05, Step [0149],                    [val_loss: 0.7906]
+2022-06-12 23:33:11.256 | INFO     | tools.trainer:val_loop:239 - Macro scores: Dice: 0.525 | IOU: 0.385 | Precision: 0.457 | Recall: 0.701 | F2: nan
+2022-06-12 23:33:11.256 | INFO     | tools.trainer:val_loop:258 - Micro scores: Dice: 0.618 | IOU: 0.448 | Precision: 0.525 | Recall: 0.753
+2022-06-12 23:34:52.615 | INFO     | tools.trainer:val_loop:173 - Valid | Epoch [008/008], with lr = 9.861849601988383e-05, Step [0149],                    [val_loss: 0.8079]
+2022-06-12 23:34:52.858 | INFO     | tools.trainer:val_loop:239 - Macro scores: Dice: 0.545 | IOU: 0.406 | Precision: 0.543 | Recall: 0.607 | F2: nan
+2022-06-12 23:34:52.859 | INFO     | tools.trainer:val_loop:258 - Micro scores: Dice: 0.643 | IOU: 0.474 | Precision: 0.610 | Recall: 0.679
+2022-06-12 23:36:36.300 | INFO     | tools.trainer:val_loop:173 - Valid | Epoch [009/009], with lr = 9.755282581475769e-05, Step [0149],                    [val_loss: 0.7752]
+2022-06-12 23:36:36.536 | INFO     | tools.trainer:val_loop:239 - Macro scores: Dice: 0.537 | IOU: 0.397 | Precision: 0.484 | Recall: 0.677 | F2: nan
+2022-06-12 23:36:36.536 | INFO     | tools.trainer:val_loop:258 - Micro scores: Dice: 0.637 | IOU: 0.468 | Precision: 0.559 | Recall: 0.742
+2022-06-12 23:38:20.151 | INFO     | tools.trainer:val_loop:173 - Valid | Epoch [010/010], with lr = 9.619397662556435e-05, Step [0149],                    [val_loss: 0.8837]
+2022-06-12 23:38:20.398 | INFO     | tools.trainer:val_loop:239 - Macro scores: Dice: 0.531 | IOU: 0.390 | Precision: 0.500 | Recall: 0.635 | F2: nan
+2022-06-12 23:38:20.398 | INFO     | tools.trainer:val_loop:258 - Micro scores: Dice: 0.626 | IOU: 0.456 | Precision: 0.577 | Recall: 0.684
+2022-06-12 23:40:00.183 | INFO     | tools.trainer:val_loop:173 - Valid | Epoch [011/011], with lr = 9.45503262094184e-05, Step [0149],                    [val_loss: 0.8321]
+2022-06-12 23:40:00.416 | INFO     | tools.trainer:val_loop:239 - Macro scores: Dice: 0.547 | IOU: 0.406 | Precision: 0.558 | Recall: 0.596 | F2: nan
+2022-06-12 23:40:00.417 | INFO     | tools.trainer:val_loop:258 - Micro scores: Dice: 0.643 | IOU: 0.474 | Precision: 0.628 | Recall: 0.658
+2022-06-12 23:41:41.403 | INFO     | tools.trainer:val_loop:173 - Valid | Epoch [012/012], with lr = 9.263200821770461e-05, Step [0149],                    [val_loss: 0.7610]
+2022-06-12 23:41:41.646 | INFO     | tools.trainer:val_loop:239 - Macro scores: Dice: 0.549 | IOU: 0.409 | Precision: 0.510 | Recall: 0.667 | F2: nan
+2022-06-12 23:41:41.647 | INFO     | tools.trainer:val_loop:258 - Micro scores: Dice: 0.647 | IOU: 0.478 | Precision: 0.578 | Recall: 0.735
+2022-06-12 23:43:26.618 | INFO     | tools.trainer:val_loop:173 - Valid | Epoch [013/013], with lr = 9.045084971874738e-05, Step [0149],                    [val_loss: 0.8128]
+2022-06-12 23:43:26.853 | INFO     | tools.trainer:val_loop:239 - Macro scores: Dice: 0.526 | IOU: 0.386 | Precision: 0.457 | Recall: 0.712 | F2: nan
+2022-06-12 23:43:26.854 | INFO     | tools.trainer:val_loop:258 - Micro scores: Dice: 0.618 | IOU: 0.447 | Precision: 0.506 | Recall: 0.794
+2022-06-12 23:45:06.051 | INFO     | tools.trainer:val_loop:173 - Valid | Epoch [014/014], with lr = 8.802029828000156e-05, Step [0149],                    [val_loss: 0.7512]
+2022-06-12 23:45:06.302 | INFO     | tools.trainer:val_loop:239 - Macro scores: Dice: 0.547 | IOU: 0.408 | Precision: 0.500 | Recall: 0.679 | F2: nan
+2022-06-12 23:45:06.302 | INFO     | tools.trainer:val_loop:258 - Micro scores: Dice: 0.646 | IOU: 0.477 | Precision: 0.552 | Recall: 0.779
+2022-06-12 23:46:43.391 | INFO     | tools.trainer:val_loop:173 - Valid | Epoch [015/015], with lr = 8.535533905932738e-05, Step [0149],                    [val_loss: 0.8058]
+2022-06-12 23:46:43.622 | INFO     | tools.trainer:val_loop:239 - Macro scores: Dice: 0.552 | IOU: 0.412 | Precision: 0.521 | Recall: 0.652 | F2: nan
+2022-06-12 23:46:43.622 | INFO     | tools.trainer:val_loop:258 - Micro scores: Dice: 0.649 | IOU: 0.480 | Precision: 0.604 | Recall: 0.701
+2022-06-12 23:48:19.696 | INFO     | tools.trainer:val_loop:173 - Valid | Epoch [016/016], with lr = 8.247240241650919e-05, Step [0149],                    [val_loss: 0.8253]
+2022-06-12 23:48:19.930 | INFO     | tools.trainer:val_loop:239 - Macro scores: Dice: 0.554 | IOU: 0.415 | Precision: 0.578 | Recall: 0.587 | F2: nan
+2022-06-12 23:48:19.930 | INFO     | tools.trainer:val_loop:258 - Micro scores: Dice: 0.655 | IOU: 0.487 | Precision: 0.649 | Recall: 0.662
+2022-06-12 23:49:54.949 | INFO     | tools.trainer:val_loop:173 - Valid | Epoch [017/017], with lr = 7.938926261462366e-05, Step [0149],                    [val_loss: 0.8187]
+2022-06-12 23:49:55.202 | INFO     | tools.trainer:val_loop:239 - Macro scores: Dice: 0.552 | IOU: 0.412 | Precision: 0.514 | Recall: 0.666 | F2: nan
+2022-06-12 23:49:55.203 | INFO     | tools.trainer:val_loop:258 - Micro scores: Dice: 0.651 | IOU: 0.482 | Precision: 0.577 | Recall: 0.746
+2022-06-12 23:51:29.257 | INFO     | tools.trainer:val_loop:173 - Valid | Epoch [018/018], with lr = 7.612492823579745e-05, Step [0149],                    [val_loss: 0.7665]
+2022-06-12 23:51:29.491 | INFO     | tools.trainer:val_loop:239 - Macro scores: Dice: 0.549 | IOU: 0.410 | Precision: 0.493 | Recall: 0.691 | F2: nan
+2022-06-12 23:51:29.491 | INFO     | tools.trainer:val_loop:258 - Micro scores: Dice: 0.647 | IOU: 0.478 | Precision: 0.566 | Recall: 0.755
+2022-06-12 23:53:02.111 | INFO     | tools.trainer:val_loop:173 - Valid | Epoch [019/019], with lr = 7.269952498697734e-05, Step [0149],                    [val_loss: 0.8119]
+2022-06-12 23:53:02.348 | INFO     | tools.trainer:val_loop:239 - Macro scores: Dice: 0.563 | IOU: 0.424 | Precision: 0.562 | Recall: 0.625 | F2: nan
+2022-06-12 23:53:02.349 | INFO     | tools.trainer:val_loop:258 - Micro scores: Dice: 0.659 | IOU: 0.492 | Precision: 0.617 | Recall: 0.708
+2022-06-12 23:54:34.774 | INFO     | tools.trainer:val_loop:173 - Valid | Epoch [020/020], with lr = 6.91341716182545e-05, Step [0149],                    [val_loss: 0.7410]
+2022-06-12 23:54:35.016 | INFO     | tools.trainer:val_loop:239 - Macro scores: Dice: 0.548 | IOU: 0.407 | Precision: 0.492 | Recall: 0.690 | F2: nan
+2022-06-12 23:54:35.017 | INFO     | tools.trainer:val_loop:258 - Micro scores: Dice: 0.642 | IOU: 0.473 | Precision: 0.553 | Recall: 0.766
+2022-06-12 23:56:07.741 | INFO     | tools.trainer:val_loop:173 - Valid | Epoch [021/021], with lr = 6.545084971874738e-05, Step [0149],                    [val_loss: 0.7699]
+2022-06-12 23:56:07.974 | INFO     | tools.trainer:val_loop:239 - Macro scores: Dice: 0.550 | IOU: 0.412 | Precision: 0.524 | Recall: 0.649 | F2: nan
+2022-06-12 23:56:07.975 | INFO     | tools.trainer:val_loop:258 - Micro scores: Dice: 0.653 | IOU: 0.485 | Precision: 0.583 | Recall: 0.742
+2022-06-12 23:57:42.992 | INFO     | tools.trainer:val_loop:173 - Valid | Epoch [022/022], with lr = 6.167226819279528e-05, Step [0149],                    [val_loss: 0.7458]
+2022-06-12 23:57:43.240 | INFO     | tools.trainer:val_loop:239 - Macro scores: Dice: 0.565 | IOU: 0.426 | Precision: 0.533 | Recall: 0.664 | F2: nan
+2022-06-12 23:57:43.241 | INFO     | tools.trainer:val_loop:258 - Micro scores: Dice: 0.663 | IOU: 0.495 | Precision: 0.588 | Recall: 0.758
+2022-06-12 23:59:19.133 | INFO     | tools.trainer:val_loop:173 - Valid | Epoch [023/023], with lr = 5.782172325201155e-05, Step [0149],                    [val_loss: 0.7613]
+2022-06-12 23:59:19.373 | INFO     | tools.trainer:val_loop:239 - Macro scores: Dice: 0.559 | IOU: 0.420 | Precision: 0.500 | Recall: 0.708 | F2: nan
+2022-06-12 23:59:19.373 | INFO     | tools.trainer:val_loop:258 - Micro scores: Dice: 0.649 | IOU: 0.481 | Precision: 0.551 | Recall: 0.790
+2022-06-13 00:00:57.316 | INFO     | tools.trainer:val_loop:173 - Valid | Epoch [024/024], with lr = 5.392295478639225e-05, Step [0149],                    [val_loss: 0.7894]
+2022-06-13 00:00:57.580 | INFO     | tools.trainer:val_loop:239 - Macro scores: Dice: 0.562 | IOU: 0.422 | Precision: 0.546 | Recall: 0.640 | F2: nan
+2022-06-13 00:00:57.581 | INFO     | tools.trainer:val_loop:258 - Micro scores: Dice: 0.660 | IOU: 0.493 | Precision: 0.612 | Recall: 0.718
+2022-06-13 00:02:36.518 | INFO     | tools.trainer:val_loop:173 - Valid | Epoch [025/025], with lr = 5e-05, Step [0149],                    [val_loss: 0.7412]
+2022-06-13 00:02:36.761 | INFO     | tools.trainer:val_loop:239 - Macro scores: Dice: 0.558 | IOU: 0.418 | Precision: 0.533 | Recall: 0.648 | F2: nan
+2022-06-13 00:02:36.762 | INFO     | tools.trainer:val_loop:258 - Micro scores: Dice: 0.657 | IOU: 0.490 | Precision: 0.596 | Recall: 0.732
+2022-06-13 00:04:15.563 | INFO     | tools.trainer:val_loop:173 - Valid | Epoch [026/026], with lr = 4.607704521360776e-05, Step [0149],                    [val_loss: 0.8166]
+2022-06-13 00:04:15.807 | INFO     | tools.trainer:val_loop:239 - Macro scores: Dice: 0.567 | IOU: 0.425 | Precision: 0.525 | Recall: 0.679 | F2: nan
+2022-06-13 00:04:15.807 | INFO     | tools.trainer:val_loop:258 - Micro scores: Dice: 0.663 | IOU: 0.496 | Precision: 0.584 | Recall: 0.766
+2022-06-13 00:05:54.852 | INFO     | tools.trainer:val_loop:173 - Valid | Epoch [027/027], with lr = 4.217827674798847e-05, Step [0149],                    [val_loss: 0.7744]
+2022-06-13 00:05:55.092 | INFO     | tools.trainer:val_loop:239 - Macro scores: Dice: 0.555 | IOU: 0.415 | Precision: 0.551 | Recall: 0.620 | F2: nan
+2022-06-13 00:05:55.093 | INFO     | tools.trainer:val_loop:258 - Micro scores: Dice: 0.657 | IOU: 0.489 | Precision: 0.621 | Recall: 0.697
+2022-06-13 00:07:34.442 | INFO     | tools.trainer:val_loop:173 - Valid | Epoch [028/028], with lr = 3.8327731807204733e-05, Step [0149],                    [val_loss: 0.7671]
+2022-06-13 00:07:34.688 | INFO     | tools.trainer:val_loop:239 - Macro scores: Dice: 0.556 | IOU: 0.414 | Precision: 0.575 | Recall: 0.599 | F2: nan
+2022-06-13 00:07:34.689 | INFO     | tools.trainer:val_loop:258 - Micro scores: Dice: 0.651 | IOU: 0.483 | Precision: 0.625 | Recall: 0.680
+2022-06-13 00:09:16.060 | INFO     | tools.trainer:val_loop:173 - Valid | Epoch [029/029], with lr = 3.4549150281252636e-05, Step [0149],                    [val_loss: 0.7554]
+2022-06-13 00:09:16.288 | INFO     | tools.trainer:val_loop:239 - Macro scores: Dice: 0.560 | IOU: 0.418 | Precision: 0.514 | Recall: 0.676 | F2: nan
+2022-06-13 00:09:16.288 | INFO     | tools.trainer:val_loop:258 - Micro scores: Dice: 0.658 | IOU: 0.490 | Precision: 0.579 | Recall: 0.761
+2022-06-13 00:09:16.482 | INFO     | tools.trainer:train_loop:115 - [Saving Snapshot:]/home/admin_mcn/hungpv/polyps/checkpoints/wli/MiT-B3-SegFormerHead_30.pth
+2022-06-13 00:10:55.316 | INFO     | tools.trainer:val_loop:173 - Valid | Epoch [030/030], with lr = 3.086582838174551e-05, Step [0149],                    [val_loss: 0.7153]
+2022-06-13 00:10:55.558 | INFO     | tools.trainer:val_loop:239 - Macro scores: Dice: 0.567 | IOU: 0.427 | Precision: 0.532 | Recall: 0.666 | F2: nan
+2022-06-13 00:10:55.558 | INFO     | tools.trainer:val_loop:258 - Micro scores: Dice: 0.667 | IOU: 0.500 | Precision: 0.602 | Recall: 0.747
+2022-06-13 00:10:55.742 | INFO     | tools.trainer:train_loop:115 - [Saving Snapshot:]/home/admin_mcn/hungpv/polyps/checkpoints/wli/MiT-B3-SegFormerHead_31.pth
+2022-06-13 00:12:32.433 | INFO     | tools.trainer:val_loop:173 - Valid | Epoch [031/031], with lr = 2.7300475013022663e-05, Step [0149],                    [val_loss: 0.7375]
+2022-06-13 00:12:32.670 | INFO     | tools.trainer:val_loop:239 - Macro scores: Dice: 0.567 | IOU: 0.426 | Precision: 0.540 | Recall: 0.659 | F2: nan
+2022-06-13 00:12:32.670 | INFO     | tools.trainer:val_loop:258 - Micro scores: Dice: 0.664 | IOU: 0.497 | Precision: 0.599 | Recall: 0.745
+2022-06-13 00:12:32.851 | INFO     | tools.trainer:train_loop:115 - [Saving Snapshot:]/home/admin_mcn/hungpv/polyps/checkpoints/wli/MiT-B3-SegFormerHead_32.pth
+2022-06-13 00:14:08.593 | INFO     | tools.trainer:val_loop:173 - Valid | Epoch [032/032], with lr = 2.3875071764202563e-05, Step [0149],                    [val_loss: 0.7767]
+2022-06-13 00:14:08.825 | INFO     | tools.trainer:val_loop:239 - Macro scores: Dice: 0.565 | IOU: 0.424 | Precision: 0.524 | Recall: 0.679 | F2: nan
+2022-06-13 00:14:08.826 | INFO     | tools.trainer:val_loop:258 - Micro scores: Dice: 0.664 | IOU: 0.497 | Precision: 0.582 | Recall: 0.773
+2022-06-13 00:14:09.007 | INFO     | tools.trainer:train_loop:115 - [Saving Snapshot:]/home/admin_mcn/hungpv/polyps/checkpoints/wli/MiT-B3-SegFormerHead_33.pth
+2022-06-13 00:15:43.425 | INFO     | tools.trainer:val_loop:173 - Valid | Epoch [033/033], with lr = 2.061073738537635e-05, Step [0149],                    [val_loss: 0.7779]
+2022-06-13 00:15:43.658 | INFO     | tools.trainer:val_loop:239 - Macro scores: Dice: 0.565 | IOU: 0.426 | Precision: 0.567 | Recall: 0.626 | F2: nan
+2022-06-13 00:15:43.658 | INFO     | tools.trainer:val_loop:258 - Micro scores: Dice: 0.668 | IOU: 0.502 | Precision: 0.617 | Recall: 0.728
+2022-06-13 00:15:43.841 | INFO     | tools.trainer:train_loop:115 - [Saving Snapshot:]/home/admin_mcn/hungpv/polyps/checkpoints/wli/MiT-B3-SegFormerHead_34.pth
+2022-06-13 00:17:16.634 | INFO     | tools.trainer:val_loop:173 - Valid | Epoch [034/034], with lr = 1.7527597583490822e-05, Step [0149],                    [val_loss: 0.7391]
+2022-06-13 00:17:16.883 | INFO     | tools.trainer:val_loop:239 - Macro scores: Dice: 0.566 | IOU: 0.426 | Precision: 0.536 | Recall: 0.663 | F2: nan
+2022-06-13 00:17:16.884 | INFO     | tools.trainer:val_loop:258 - Micro scores: Dice: 0.668 | IOU: 0.501 | Precision: 0.592 | Recall: 0.765
+2022-06-13 00:17:17.072 | INFO     | tools.trainer:train_loop:115 - [Saving Snapshot:]/home/admin_mcn/hungpv/polyps/checkpoints/wli/MiT-B3-SegFormerHead_35.pth
+2022-06-13 00:18:45.786 | INFO     | tools.trainer:val_loop:173 - Valid | Epoch [035/035], with lr = 1.4644660940672627e-05, Step [0149],                    [val_loss: 0.7946]
+2022-06-13 00:18:46.030 | INFO     | tools.trainer:val_loop:239 - Macro scores: Dice: 0.565 | IOU: 0.423 | Precision: 0.543 | Recall: 0.650 | F2: nan
+2022-06-13 00:18:46.031 | INFO     | tools.trainer:val_loop:258 - Micro scores: Dice: 0.664 | IOU: 0.497 | Precision: 0.605 | Recall: 0.735
+2022-06-13 00:18:46.214 | INFO     | tools.trainer:train_loop:115 - [Saving Snapshot:]/home/admin_mcn/hungpv/polyps/checkpoints/wli/MiT-B3-SegFormerHead_36.pth
+2022-06-13 00:20:14.452 | INFO     | tools.trainer:val_loop:173 - Valid | Epoch [036/036], with lr = 1.1979701719998453e-05, Step [0149],                    [val_loss: 0.8029]
+2022-06-13 00:20:14.678 | INFO     | tools.trainer:val_loop:239 - Macro scores: Dice: 0.563 | IOU: 0.423 | Precision: 0.570 | Recall: 0.621 | F2: nan
+2022-06-13 00:20:14.679 | INFO     | tools.trainer:val_loop:258 - Micro scores: Dice: 0.669 | IOU: 0.503 | Precision: 0.627 | Recall: 0.718
+2022-06-13 00:20:14.863 | INFO     | tools.trainer:train_loop:115 - [Saving Snapshot:]/home/admin_mcn/hungpv/polyps/checkpoints/wli/MiT-B3-SegFormerHead_37.pth
+2022-06-13 00:21:44.793 | INFO     | tools.trainer:val_loop:173 - Valid | Epoch [037/037], with lr = 9.549150281252633e-06, Step [0149],                    [val_loss: 0.7549]
+2022-06-13 00:21:45.025 | INFO     | tools.trainer:val_loop:239 - Macro scores: Dice: 0.566 | IOU: 0.424 | Precision: 0.562 | Recall: 0.629 | F2: nan
+2022-06-13 00:21:45.026 | INFO     | tools.trainer:val_loop:258 - Micro scores: Dice: 0.669 | IOU: 0.502 | Precision: 0.626 | Recall: 0.718
+2022-06-13 00:21:45.206 | INFO     | tools.trainer:train_loop:115 - [Saving Snapshot:]/home/admin_mcn/hungpv/polyps/checkpoints/wli/MiT-B3-SegFormerHead_38.pth
+2022-06-13 00:23:17.981 | INFO     | tools.trainer:val_loop:173 - Valid | Epoch [038/038], with lr = 7.367991782295391e-06, Step [0149],                    [val_loss: 0.7595]
+2022-06-13 00:23:18.214 | INFO     | tools.trainer:val_loop:239 - Macro scores: Dice: 0.571 | IOU: 0.430 | Precision: 0.532 | Recall: 0.677 | F2: nan
+2022-06-13 00:23:18.214 | INFO     | tools.trainer:val_loop:258 - Micro scores: Dice: 0.669 | IOU: 0.503 | Precision: 0.595 | Recall: 0.764
+2022-06-13 00:23:18.397 | INFO     | tools.trainer:train_loop:115 - [Saving Snapshot:]/home/admin_mcn/hungpv/polyps/checkpoints/wli/MiT-B3-SegFormerHead_39.pth
+2022-06-13 00:24:51.540 | INFO     | tools.trainer:val_loop:173 - Valid | Epoch [039/039], with lr = 5.449673790581611e-06, Step [0149],                    [val_loss: 0.7430]
+2022-06-13 00:24:51.784 | INFO     | tools.trainer:val_loop:239 - Macro scores: Dice: 0.566 | IOU: 0.424 | Precision: 0.551 | Recall: 0.639 | F2: nan
+2022-06-13 00:24:51.785 | INFO     | tools.trainer:val_loop:258 - Micro scores: Dice: 0.666 | IOU: 0.499 | Precision: 0.618 | Recall: 0.723
+2022-06-13 00:24:51.966 | INFO     | tools.trainer:train_loop:115 - [Saving Snapshot:]/home/admin_mcn/hungpv/polyps/checkpoints/wli/MiT-B3-SegFormerHead_40.pth
+2022-06-13 00:24:51.967 | INFO     | tools.trainer:train_loop:124 - Training cost: 3844.6417573760264seconds
