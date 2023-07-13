@@ -1,6 +1,6 @@
-# MemCon-POLYP
+# MeCo-POLYP
 
-This repository contains the source code of MemCon-POLYP and baseline model name SFMNet.This paper utilizes a memory bank to store learned feature embeddings from the model, which is then used to tackle the imbalanced data and hard pixels using the memory-driven region contrast loss.
+This repository contains the source code of MeCo-POLYP and baseline model name SFMNet.This paper utilizes a memory bank to store learned feature embeddings from the model, which is then used to tackle the imbalanced data and hard pixels using the memory-driven region contrast loss.
 ![](images/sup_unsup_memcon.png)
 ## Datasets
 In this work, we conducted experiments using five Polyp datasets and two NeoPolyp datasets:
@@ -19,18 +19,18 @@ BKAI-IGH NeoPolyp-Small and NeoPolyp-Large : The NeoPolyp-Small includes 1200 hi
 ### Training and evaluating
 
 
-Training and evaluating MemCon on Polyp datasets:
+Training and evaluating MeCo on Polyp datasets:
 ```
 python3 train_polyp.py --config configs/polyp.yaml
 python3 eval_polyp.py --config configs/polyp.yaml
 ```
-Training and evaluating MemCon on Small-NeoPolyp datasets:
+Training and evaluating MeCo on Small-NeoPolyp datasets:
 ```
 python3 train_neo_small.py --config configs/neo_small.yaml
 python3 eval_neo_small.py --config configs/neo_small.yaml
 ```
 
-Training and evaluating MemCon on Large-NeoPolyp datasets:
+Training and evaluating MeCo on Large-NeoPolyp datasets:
 ```
 python3 train_neo_large.py --config configs/neo_large.yaml
 python3 eval_neo_large.py --config configs/neo_large.yaml
