@@ -1,6 +1,6 @@
 # MeCo-POLYP
 
-This repository contains the source code of MeCo-POLYP and baseline model name SFMNet.This paper utilizes a memory bank to store learned feature embeddings from the model, which is then used to tackle the imbalanced data and hard pixels using the memory-driven region contrast loss.
+This repository contains the source code of MeCo-POLYP and baseline model named UGCANet.This paper utilizes a memory bank to store learned feature embeddings from the model, which is then used to tackle the imbalanced data and hard pixels using the memory-driven region contrast loss.
 ![](images/sup_unsup_memcon.png)
 ## Datasets
 In this work, we conducted experiments using five Polyp datasets and two NeoPolyp datasets:
